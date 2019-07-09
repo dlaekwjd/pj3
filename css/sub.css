@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+/* pizza */
+/* header */
+#header{position: fixed;top: 0;left: 0;right: 0;height: 100px;background: #fff;border-bottom: 1px solid #ccc;z-index: 200}
+#header .sub_logo{position: absolute;top: 10px;left: 50%;margin-left: -540px;z-index: 100;}
+
+/* snb */
+#snb{position: absolute;top: 0;left: 0;right: 0;text-align: center;background: #fff;}
+#snb > ul{position: relative;padding-left: 320px;width: 840px;height: 100px;margin: 0 auto}
+#snb > ul > li{float: left;width: 140px;margin-left: 35px;}
+#snb > ul > li:first-child{margin-left: 0;}
+#snb ul li a{display: block}
+#snb > ul > li > a{position: relative;height: 100px;line-height: 100px;font-size: 25px;color: #333;font-weight: 500}
+#snb > ul > li:hover > a, #gnb > ul > li > a:focus, #gnb > ul > li.on > a{color: #cb1a1a}
+#snb ul li ul li a{height: 34px;line-height: 34px;}
+#snb ul li ul li:hover a, #snb ul li div ul li a:focus, #snb ul li div ul li.on a{color: #cb1a1a}
+
+/* content */
+#content{position: relative;padding-top: 100px;}
+.sub_visual{background: url("../images/pizza/sub_topvisual.jpg") no-repeat;width: 100%;height: 630px;color: #666}
+.sub_visual h2, .sub_visual p{position: absolute;left: 50%;margin-left: -653px;}
+.sub_visual h2{font-size: 50px;top: 142px;}
+.sub_visual p{font-size: 35px;top: 208px;}
+
+/* tab 버튼 */
+#content div{position: relative;}
+#content div #pizzaTab{position: relative;margin-top: 100px;}
+#content div #pizzaTab >.btnwrap{text-align: center;width: 935px;margin-bottom: 66px;padding-top: 45px;}
+#content div #pizzaTab >.btnwrap > li{float: left;width: 140px;margin-left: 125px;}
+#content div #pizzaTab >.btnwrap > li:first-child{margin-left: 0;}
+#content div #pizzaTab >.btnwrap > li > a{display: block;font-size: 20px;height: 30px;margin-bottom: 7px;border-bottom: 2px solid #333;}
+#content div #pizzaTab >.btnwrap > li > a:hover, #content div #pizzaTab >.btnwrap > li > a:focus, #content div #pizzaTab >.btnwrap > li.on > a{color: #cb1a1a;border-color: #cb1a1a;}
+
+#content div #pizzaTab .cntwrap{width: 100%;}
+#content div #pizzaTab .cntwrap > div{display: none}
+#content div #pizzaTab .cntwrap > div:first-child{display: block}
+#content div #pizzaTab .cntwrap > div  > ul{width: 1300px;}
+#content div #pizzaTab .cntwrap > div  > ul > li{float: left;;width: 623px;height: 320px;border: 1px solid #ccc;margin-bottom: 67px;}
+#content div #pizzaTab .cntwrap > div  > ul > li:nth-child(odd){margin-right: 50px;}
+#content div #pizzaTab .cntwrap > div  > ul > li > img{float: left;padding-right: 10px;padding-left:10px;margin-top: 45px;}
+#content div #pizzaTab .cntwrap > div  > ul > li .txt_box{float: left;width: 296px;margin-top: 33px;}
+#content div #pizzaTab .cntwrap > div  > ul > li .txt_box strong{display: block;font-size: 25px;text-align: center}
+#content div #pizzaTab .cntwrap > div  > ul > li .txt_box p{font-size: 14px;text-align: left;margin: 10px 0 28px }
+.txt_box #pizzaKind, .txt_box .num_item, .txt_box #pizzaSize{height: 42px;line-height: 42px;background: #eee}
+#content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaKind{width: 174px;float: left;margin-right: 17px;padding-left: 10px}
+#content div #pizzaTab .cntwrap > div  > ul > li .txt_box .num_item{position: relative;width: 105px;float: left;}
+.txt_box .num_item input[type="text"]{text-align: center;width: 105px;}
+.txt_box .num_item .num_up{position: absolute;top: 50%;right: 10px;margin-top: -6px;}
+.txt_box .num_item .num_down{position: absolute;top: 50%;left: 10px;}
+#content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaSize{width: 296px;margin-top: 10px;padding-left: 10px;margin-bottom: 18px;}
+#content div #pizzaTab .cntwrap > div  > ul > li .txt_box a{display: inline-block;height: 42px;line-height: 42px;text-align: center;color: #fff;}
+#content div #pizzaTab .cntwrap > div  > ul > li .txt_box .menu{width: 172px;background: #316910;margin-right: 13px;}
+#content div #pizzaTab .cntwrap > div  > ul > li .txt_box .pizza_cart{width: 106px;background: #000}
+
+/* pizza 상세 페이지 */
+#content{padding-top: 130px;}
+#content .irish{position: relative;height: 560px;width: 100%}
+#content h2{font-size: 40px;text-align: center}
+#content article h3{font-size: 30px;text-align: center;font-weight: 500}
+#content .irish .back{background: #eee;height: 560px;margin-top: 40px;}
+#content .irish div img{padding-top: 108px;float: left;margin-right: 112px;}
+#content .irish div .detail{float: left;width: 570px;margin-top: 77px;text-align: center;font-weight: 500}
+#content .irish div .detail .p_detail{font-size: 20px;padding-top: 20px;font-weight: normal}
+#content .irish div .detail ul{padding: 0 20px}
+#content .irish div .detail ul li{float: left}
+#content .irish div .detail ul li .price{display: inline-block;font-size: 28px;margin-top: 30px;}
+#content .irish div .detail ul li span{color: #cb1a1a;font-size: 30px;padding-left: 30px;}
+#content .irish div .detail div a{margin-top: 43px;display: inline-block;width: 83px;height: 83px;line-height: 83px;background: #cb1a1a;color: #fff;border-radius: 50%;font-weight: normal;margin-left: 31px;font-size: 14px}
+#content .irish div .detail div a:first-child{margin-left: 0;}
+#content .irish div .detail a{display: inline-block;;width: 270px;height: 60px;line-height: 60px;color: #fff;text-align: center;background: #007236;margin-top: 42px;}
+#content .irish div .detail .t_l{text-align: left;padding-top: 43px;}
+
+#content .option{position: relative;padding-top: 70px;text-align: center}
+#content .option ul li{display: inline-block;padding-top: 76px;width: 280px;padding-left: 30px;}
+#content .option ul li:first-child{margin-left: 0;}
+#content .option ul li span{display: block;font-size: 20px;margin-bottom: 25px;font-weight: 500}
+#content .option ul li select{width: 278px;height: 48px;border: 1px solid #ccc;padding-left: 36px;}
+
+#content .topping{position: relative;padding-top: 70px;text-align: center}
+#content .topping ul li{display: inline-block;padding-top: 74px;padding-left: 30px;}
+#content .topping ul li:first-child{padding-left: 0;}
+
+#content .papa{position: relative;padding-top: 70px;}
