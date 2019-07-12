@@ -8,15 +8,17 @@
 #header .util li{float: left;margin-left: 24px;}
 #header .open_btn{top: 47px;right: 82px;}
 
-#gnb{display: none;position: fixed;left: 0;bottom: 100%;width: 100%;height: 100%;background: #fff;text-align: center;padding: 0 90px;margin: 0 auto;font-weight: 500;z-index: 500;}
-#gnb div{position: absolute;top: 40px;left: 50%;margin-left: -154px;}
-#gnb > ul{font-size: 36px;color: #cb1a1a;margin-top: 250px;}
-#gnb > ul > li{float: left;width: 248px;}
-#gnb > ul > li:after{content: "";display: block;width: 1px;height: 600px;background: #cb1a1a;position: absolute;top: 250px;}
+#gnb{display: none;position: fixed;left: 0;bottom: 100%;width: 100%;height: 100%;background: #fff;text-align: center;font-weight: 500;z-index: 500;}
+#gnb div{position: absolute;top: 30px;left: 50%;margin-left: -100px;}
+#gnb > ul{font-size: 30px;color: #cb1a1a;width: 1400px;margin: 170px auto;}
+#gnb > ul > li{float: left;width: 200px;}
+#gnb > ul > li:after{content: "";display: block;width: 1px;height: 560px;background: #cb1a1a;position: absolute;top: 170px;}
 #gnb > ul > li:first-child:after{display: none}
+#gnb > ul > li a:hover, #gnb > ul > li a:focus, #gnb > ul > li.on a{color: #13ac5f}
 #gnb > ul li ul{font-size: 20px;margin-top: 36px;}
-#gnb > ul li ul li{padding-top: 36px;color: #333}
-#gnb .close_btn{position: absolute;top: 48px;right: 12%}
+#gnb > ul li ul li{padding-top: 35px;color: #333}
+#gnb > ul li ul li:first-child{padding-top: 0;}
+#gnb .close_btn{position: absolute;top: 48px;right: 5%}
 
 #indicator{position: fixed;top: 50%;margin-top: -150px;right: 50px;z-index: 200}
 #indicator ul{border-bottom: 1px solid #999;}
@@ -144,9 +146,23 @@ div .size ul li p{font-size: 18px;margin-left: 10px;}
 @media screen and (max-width: 1280px) {
     .area{width: 100%;}
 
+    #header .logo{left: 50%;margin-left: -100px;}
+    #header .logo img{width: 200px;height: 80px;}
+    #header .util{left: 82px}
+
+    #gnb div{margin-left: -70px;}
+    #gnb div img{width: 140px;height: 60px;}
+    #gnb > ul{font-size: 25px;width: 100%;margin: 130px auto}
+    #gnb > ul > li{float: none;width: 100%;border-bottom: 1px solid #cb1a1a;}
+    #gnb > ul > li > a{display: block;width: 100%;height: 70px;line-height: 70px}
+    #gnb > ul > li:hover a, #gnb > ul > li a:focus, #gnb > ul > li.on a{background: #006e62;color: #fff}
+    #gnb > ul > li:after{display: none}
+    #gnb > ul li ul{display: none}
+    
     #indicator, .scroll{display: none;}
     #cnt1 #mainSlider .visual li strong{padding-top: 250px;font-size: 35px;}
     #cnt1 #mainSlider .visual li p{font-size: 25px;}
+    #cnt1 #mainSlider .paging{top: 550px}
 
     #container #cnt2{background: #f4e0c8}
     #container #cnt2 h3, #container #cnt3 h3{font-size: 40px;padding-top: 40px;}
@@ -190,55 +206,83 @@ div .size ul li p{font-size: 18px;margin-left: 10px;}
     #cnt4 div .right .store{height: 256px}
     #cnt4 div .right .store strong{padding-top: 70px;}
     #cnt4 div .right .store strong:after{top: 48px;}
-
+}
 /* 모바일 767이하 */
 @media screen and (max-width: 768px) {
-    #header .logo{top: 50px;left: 50%;margin-left: -112px;}
+    #header .logo{top: 40px;left: 50%;margin-left: -70px;}
+    #header .logo img{width: 140px;height: 60px;}
     #header .util{top: 40px;left: 32px}
     #header .open_btn{top: 40px;right: 32px;}
 
     #indicator{display: none}
 
+    #gnb > ul{font-size: 20px;margin: 100px auto}
+    #gnb > ul > li > a{display: block;width: 100%;height: 60px;line-height: 60px}
+    #gnb .close_btn{width: 40px;height: 40px;}
+
+
     #cnt1 #mainSlider .visual .list1{background-image: url("../images/mobile/visual-1@2x.png")}
     #cnt1 #mainSlider .visual .list2{background-image: url("../images/mobile/visual-2@2x.png")}
     #cnt1 #mainSlider .visual .list3{background-image: url("../images/mobile/visual-3@2x.png")}
 
-    #cnt1 #mainSlider .visual li strong{padding-top: 280px;font-size: 30px}
-    #cnt1 #mainSlider .visual li p{font-size: 25px;}
-    #cnt1 #mainSlider .visual li .kr{padding-top: 45px;}
-    #cnt1 #mainSlider .visual li .en{margin-top: 12px;}
-    #cnt1 #mainSlider .paging{top: 550px;left: 50%;margin-left: -250px}
-    #cnt1 #mainSlider .paging li{margin-right: 40px;width: 140px;}
-    #cnt1 #mainSlider .paging li:before{width: 140px}
-    #cnt1 #mainSlider .paging li.on:after{width: 140px}
-    #cnt1 #mainSlider .paging li a{font-size: 14px}
+    #cnt1 #mainSlider .visual li strong{padding-top: 230px;font-size: 28px}
+    #cnt1 #mainSlider .visual li p{font-size: 22px;}
+    #cnt1 #mainSlider .paging{top: 450px;margin-left: -170px}
+    #cnt1 #mainSlider .paging li{margin-right: 20px;width: 100px;height: 60px}
+    #cnt1 #mainSlider .paging li:before{width: 100px;}
+    #cnt1 #mainSlider .paging li.on:after{width: 100px}
     
-    #container #cnt2{background: #f4e0c8}
-    #container #cnt2 h3, #container #cnt3 h3{font-size: 30px;padding-top: 25px;}
-    #container #cnt2 > p, #container #cnt3 > p{font-size: 14px;padding-top: 6px}
-    #cnt2 #bestTab{margin-top: 30pxf}
-    #cnt2 #bestTab > .btnwrap{top: 317px}
-    #cnt2  #bestTab .cntwrap > div > div, #cnt2 #bestTab .cntwrap > div > img{width: 100%;float: none;}
-    #cnt2  #bestTab .cntwrap{width: 100%;}
-    #cnt2 #bestTab > .btnwrap > li{margin-left: 8px;width: 80px;height: 80px;}
-    #cnt2  #bestTab .cntwrap > div > div{padding: 35px 33px 0}
-    #cnt2 #bestTab .cntwrap > div > img{padding-top: 52px;}
+    #container #cnt2 h3, #container #cnt3 h3{font-size: 30px;padding-top: 20px;}
+    #container #cnt2 > p, #container #cnt3 > p{font-size: 14px;padding-top: 8px}
 
+    #cnt2 #bestTab{margin-top: 20px;background: none}
+    #cnt2 #bestTab > .btnwrap{position: absolute;top: 200px;left: 50%;margin-left: -137px;}
+    #cnt2 #bestTab > .btnwrap > li:first-child{margin-left: 0;}
+    #cnt2 #bestTab > .btnwrap > li{margin-left: 10px;width: 60px;height: 60px;}
+    #cnt2 #bestTab .cntwrap > div > div,#cnt2 #bestTab .cntwrap > div > img{float: none;width: 320px;height: 270px;margin: 0 auto}
+    #cnt2 #bestTab .cntwrap > div > img{display: block;padding-top: 0px;}
+    #cnt2  #bestTab .cntwrap > div > div{background: #fff;box-sizing: border-box;padding-left: 23px;padding-top: 25px}
+    #cnt2  #bestTab .cntwrap > div > div strong{display: block;font-size: 20px;margin-bottom: 4px;}
+    #cnt2  #bestTab .cntwrap > div > div .material{font-size: 14px;margin-bottom: 10px;}
+    #cnt2  #bestTab .cntwrap > div > div .p_txt{font-size: 12px;margin-bottom: 20px;}
+    #cnt2  #bestTab .cntwrap > div > div .size ul{height: 16px;}
+    div .size ul li p{font-size: 14px;margin-left: 5px;}
+    #cnt2  #bestTab .cntwrap > div > div .size ul li span{width: 20px;height: 20px;line-height: 20px}
+    #cnt2  #bestTab .cntwrap > div > div .size a{margin-top: 20px;width: 130px;height: 30px;line-height: 30px;padding-left: 18px;font-size: 12px}
+
+    #container #cnt3 #newTab > ul{margin: 20px auto;}
+    #container #cnt3 #newTab > ul > li{margin-left: 5px}
+    #container #cnt3 #newTab > ul > li > a{width: 60px;height: 60px;line-height: 60px;font-size: 14px}
+    #cnt3 #newTab div div .new_slider{margin: 20px auto;}
+    #cnt3 #newTab div div .new_slider .area{width: 300px;}
+    #cnt3 #newTab div div .new_slider div ul{height: 400px;}
+    #cnt3 #newTab div div .new_slider div ul li{width: 270px;height: 400px;margin-right: 10px}
+    #cnt3 #newTab div div .new_slider .prev_next a{top: 153px}
+    #cnt3 #newTab div div .new_slider .prev_next .prev{margin-left: -230px;}
+    #cnt3 #newTab div div .new_slider .prev_next .next{margin-left: 170px;}
     
-    `/* 
-    #cnt2  #bestTab .cntwrap > div > div strong{display: block;font-size: 35px;margin-bottom: 7px;}
-#cnt2  #bestTab .cntwrap > div > div .material{font-size: 20px;margin-bottom: 29px;}
-#cnt2  #bestTab .cntwrap > div > div .p_txt{font-size: 16px;color: #9c9e9c;margin-bottom: 63px;}
-#cnt2  #bestTab .cntwrap > div > div .size ul{height: 32px;}
-#cnt2  #bestTab .cntwrap > div > div .size ul li{float: left;}
-#cnt2  #bestTab .cntwrap > div > div .size ul li span, #cnt2 .cntwrap > div .size ul li p{display: inline-block;}
-div .size ul li p{font-size: 18px;margin-left: 10px;}
-#cnt2  #bestTab .cntwrap > div > div .size ul li span{color: #fff;width: 25px;height: 25px;line-height: 25px;text-align: center;}
-#cnt2  #bestTab .cntwrap > div > div .size ul li .green{background: #006e62}
-#cnt2  #bestTab .cntwrap > div > div .size ul li .yellow{background: #fbb910;margin-left: 13px;}
-#cnt2  #bestTab .cntwrap > div > div .size a{display: block;margin-top: 40px;background: url("../images/common/arrow.png") no-repeat 90% 50% #f43402;width: 180px;height: 50px;color: #fff;line-height: 50px;padding-left: 18px}
- */
-}
+    #cnt4 div .left{width: 100%;float: none}
+    #cnt4 div .left ul li, #cnt4 div .left ul li .txt, #cnt4 div .left ul li .txt2{height: 210px;}
+    #cnt4 div ul li img{display: none}
+    #cnt4 div .left ul li .txt{float: left}
+    #cnt4 div .left ul li div strong, #cnt4 div .left ul li .txt2 strong{font-size: 18px;padding-top: 50px}
+    #cnt4 div .left ul li div strong:after{top: 25px}
+    #cnt4 div .left ul li .txt2 strong::after{top: 25px;}
+    #cnt4 div .left ul li div p{font-size: 14px;margin-top: 10px;}
+    #cnt4 div .right .friday{margin-top: -630px;}
+    #cnt4 div .right div strong{font-size: 20px}
+    #cnt4 div .right div strong:after{top: 100px}
+    #cnt4 div .right div p{font-size: 14px;}
+    #cnt4 div .right div a{width: 140px;padding-left: 10px;font-size: 14px}
+    #cnt4 div .right .friday{height: 420px;}
+    #cnt4 div .right .store{height: 210px;}
+    #cnt4 div .right .friday strong{padding-top: 150px;}
+    #cnt4 div .right .store strong{padding-top: 40px;}
+    #cnt4 div .right .store strong:after{top: 20px;}
 
-@media screen and (max-width: 370px) and (min-width: 320px) {
+    #cnt5{width: 100%;height: 295px !important;}
+    #cnt5 h3{font-size: 28px;padding-top: 70px}
+    #cnt5 p{font-size: 14px}
+    #cnt5 a{width: 140px;height: 40px;line-height: 40px;margin: 21px auto 0;padding-left: 12px;font-size: 14px}
+   
 }

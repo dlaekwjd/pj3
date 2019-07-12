@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -5,13 +6,81 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> pizza / menu / papajohns </title>
-    <link rel="stylesheet" href="../css/sub.css">
     <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/sub.css">
     <!--[if lt IE 9]>
         <script type="text/javascript" src="js/html5shiv.min.js"></script>
     <![endif]-->
     <script src="../js/jquery-1.12.4.min.js"></script>
-    <script src="../js/snb.js"></script>
+    <script src="../js/sub.js"></script>
+    <script>
+        $(document).ready(function () {
+            /* tab */
+            var $tab = $('.tab');
+
+            $tab.find('.btnwrap a:first-child').addClass('on').attr('aria-selected', true).siblings().attr('aria-selected', false);
+            $tab.find('.cntwrap > img:first-child').show().attr('aria-hidden', false).siblings().hide().attr('aria-hidden', true);
+
+            $tab.find('.btnwrap a').on('click', function (e) {
+                e.preventDefault();
+                var tgIdx = $(this).index();
+                console.log(tgIdx);
+
+                $(this).attr('aria-selected', true).addClass('on').siblings().removeClass('on').attr('aria-selected', false);
+
+                $(this).closest('.tab').find('.cntwrap > img').eq(tgIdx).show().attr('aria-hidden', false).siblings().hide().attr('aria-hidden', true);
+            });
+
+            //.opt_change
+            $('.opt_change select').on('change', function () {
+                $('.change_txt span').text('');
+                var result = '';
+                $('.opt_change select').each(function () {
+                    var optNum = $(this).prop('selectedIndex');
+                    console.log(optNum, $(this).val() );
+
+                    if (optNum > 0) {
+                        result += $(this).val() + ', ';
+                    }
+                });
+                console.log(result);
+                var comma = result.lastIndexOf(', ');
+                console.log(comma);
+                result = result.slice(0, comma);
+                
+                $('.change_txt span').text(result);
+            });
+            var scrollT;
+            var timer = 0;  
+
+            $(window).on('scroll', function () {
+                clearTimeout(timer);
+                /* 
+                참조변수 = setTimeout(function() {}, 시간간격);
+                참조변수 = setTimeout(함수명, 시간간격);
+                clearTimeout(참조변수);
+                */
+                timer = setTimeout(function () {
+                //스크롤바가 움직이는 수직거리
+                scrollT = $(this).scrollTop();
+                console.log(scrollT);
+
+                /* 여러의 .fade로 반복문 실행
+                $(선택자).each(function (인덱스번호, 엘리먼트) {});  
+
+                .fade라는 클래스명을 가진 엘리먼트를 each() 메서드로 하나씩 순회하면서 스크롤바가 움직인 거리와 비교
+                가까운지 여부는 스크롤바가 움직인 거리와 나의 전역 수직 위치와 비교
+                if() 스크롤바가 움직인 거리가 나와 가까워졌을 경우 : 투명도1, top 0
+                else 처음으로 되돌려 놓기: 투명도0, top 40
+                */
+                $('.fade').each(function () {
+                    if ( scrollT > $(this).offset().top-600 ) $(this).stop().animate({opacity: 1, filter: 'Alpha(opacity=100)', top: 0});
+                    else $(this).stop().animate({opacity: 0, filter: 'Alpha(opacity=0)', top: 40});
+                });
+                }, 100);
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -86,12 +155,11 @@
         </nav>
     </header>
 
-    <section id="content">
+    <section id="content" class="sub">
         <h2>피자</h2>
         <article class="irish">
             <div class="back">
-                <div class="area clearfix">
-                    <img src="../images/pizza_in/irish.png" alt="">
+                <div class="area clearfix p_r">
                     <div class="detail">
                         <h3>아이리쉬 포테이토</h3>
                         <p class="p_detail">진한 갈릭 소스와 담백한 포테이토의 달콤한 만남</p>
@@ -109,69 +177,69 @@
                                 <p class="price">36,500원</p>
                             </li>
                         </ul>
-                        <div>
-                            <a href="">오리지널</a>
-                            <a href="">씬</a>
-                            <a href="">골드링</a>
-                            <a href="">치즈롤</a>
+                        <div class="tab">
+                            <div class="btnwrap">
+                                <a href="">오리지널</a>
+                                <a href="">씬</a>
+                                <a href="">골드링</a>
+                                <a href="">치즈롤</a>
+                            </div>
+                            <div class="cntwrap">
+                                <img src="../images/pizza_in/irish.png" alt="">
+                                <img src="../images/pizza_in/irish_s.png" alt="">
+                                <img src="../images/pizza_in/irish_g.png" alt="">
+                                <img src="../images/pizza_in/irish_c.png" alt="">
+                            </div>
                         </div>
-                        <p class="t_l">변경된 옵션: <span></span></p>
+                        <p class="change_txt">변경된 옵션: <span></span></p>
                         <a href="">주문하러 가기</a>
                     </div>
                 </div>
             </div>
         </article>
-        <article class="option area">
+        <article class="option">
             <h3>옵션변경</h3>
-            <ul class="clearfix">
+            <ul class="clearfix opt_change">
                 <li>
                     <span>소스 조절</span>
-                    <form action="" id="select1">
-                        <select name="sourse" id="sourse" title="피자 도우 선택">
-                            <option value="">소스 보통(normal)</option>
-                            <option value="">소스 조금(LS)</option>
-                            <option value="">소스 많이(XS)</option>
-                            <option value="">소스 없음(NS)</option>
-                        </select>
-                    </form>
+                    <select name="sourse" id="sourse" title="피자 도우 선택">
+                        <option value="소스 보통(normal)">소스 보통(normal)</option>
+                        <option value="소스 조금(LS)">소스 조금(LS)</option>
+                        <option value="소스 많이(XS)">소스 많이(XS)</option>
+                        <option value="소스 없음(NS)">소스 없음(NS)</option>
+                    </select>
                 </li>
                 <li>
                     <span>치즈조절</span>
-                    <form action="" id="select2">
-                        <select name="cheese" id="cheese" title="피자 치즈 선택">
-                            <option value="">치즈 보통(normal)</option>
-                            <option value="">치즈 조금(LC)</option>
-                            <option value="">치즈 없음(NC)</option>
-                        </select>
-                    </form>
+                    <select name="cheese" id="cheese" title="피자 치즈 선택">
+                        <option value="치즈 보통(normal)">치즈 보통(normal)</option>
+                        <option value="치즈 조금(LC)">치즈 조금(LC)</option>
+                        <option value="치즈 없음(NC)">치즈 없음(NC)</option>
+                    </select>
                 </li>
                 <li>
                     <span>굽기 조절</span>
-                    <form action="" id="select3">
                     <select name="roast" id="roast" title="피자 굽기 선택">
-                        <option value="">기본 굽기(normal)</option>
-                        <option value="">바싹 굽기(WD)</option>
+                        <option value="기본 굽기(normal)">기본 굽기(normal)</option>
+                        <option value="바싹 굽기(WD)">바싹 굽기(WD)</option>
                     </select>
-                    </form>
                 </li>
                 <li>
                     <span>조각 컷팅</span>
-                    <form action="" id="select4">
                     <select name="cut" id="cut" title="피자 조각 선택">
-                        <option value="">기본 컷팅(normal)</option>
-                        <option value="">사각 컷팅(#)</option>
-                        <option value="">6조각 컷팅(6Cut)</option>
-                        <option value="">8조각 컷팅(8Cut)</option>
-                        <option value="">10조각 컷팅(10Cut)</option>
+                        <option value="기본 컷팅(normal)">기본 컷팅(normal)</option>
+                        <option value="사각 컷팅(#)">사각 컷팅(#)</option>
+                        <option value="6조각 컷팅(6Cut)">6조각 컷팅(6Cut)</option>
+                        <option value="8조각 컷팅(8Cut)">8조각 컷팅(8Cut)</option>
+                        <option value="10조각 컷팅(10Cut)">10조각 컷팅(10Cut)</option>
                     </select>
-                    </form>
                 </li>
             </ul>
         </article>
-        <article class="topping area">
+        <article class="topping">
             <h3>토핑안내</h3>
             <ul class="clearfix">
-                <li><img src="../images/pizza_in/con.png" alt=""></li>
+                <li><img src="../images/pizza_in/con1.png" alt=""></li>
                 <li><img src="../images/pizza_in/bacon.png" alt=""></li>
                 <li><img src="../images/pizza_in/mozza.png" alt=""></li>
                 <li><img src="../images/pizza_in/murshroom.png" alt=""></li>
@@ -179,60 +247,62 @@
                 <li><img src="../images/pizza_in/potato.png" alt=""></li>
             </ul>
         </article>
-        <article class="papa area">
+        <article class="papa">
             <h3>파파존스 피자는 이렇게 만들어 집니다</h3>
-            <ul>
-                <li>
-                    <img src="../images/pizza_in/img-pizzastroy-01.png" alt="">
-                    <div class="txt">
-                        <strong>“72시간 4℃에서 저온숙성한 오리지널 수타 도우”</strong>
-                        <p>
-                            더 맛있는 피자는 도우에서부터 시작됩니다.
-                            파파존스의 오리지널 도우는 생산라인에서 매장까지 냉동상태가 아닌 냉장상태로 배달 되며,
-                            최상의 상태로 발효될 때까지 72시간 4℃에서 저온 숙성됩니다.
-                            이러한 노력이 있기에 파파존스는 쫄깃하면서, 풍미를 갖춘 크러스트를 고객에게 제공할 수 있습니다.
-                            특히 파파존스의 특별한 갈릭딥핑소스와 크러스트는 환상적인 궁합을 자랑합니다.
-                        </p>
-                    </div>
-                </li>
-                <li>
-                    <img src="../images/pizza_in/img-pizzastroy-02.png" alt="">
-                    <div class="txt">
-                        <strong>“프리미엄 토마토 소스”</strong>
-                        <p>
-                            파파존스의 “Better Ingredients (더 좋은 재료)”를 위한 히든카드는 바로 토마토 소스입니다.
-                            캘리포니아의 비옥한 지대에서 3개월 동안 잘 자란 토마토는 수확된지 단 6시간 안에 캔 제품으로 가공됩니다.
-                            토마토와 함께 허브, 향신료 등의 재료를 첨가하고,
-                            제조과정에서 열을 최대한 차단시켜 신선한 토마토의 풍미를 느끼실 수 있습니다.
-                        </p>
-                    </div>
-                </li>
-                <li>
-                    <img src="../images/pizza_in/img-pizzastroy-03.png" alt="">
-                    <div class="txt">
-                        <strong>“매장에서 매일 아침 손질하는 신선한 채소”</strong>
-                        <p>
-                            파파존스는 채소의 신선도를 유지하기 위해 냉동포장이 되거나, 미리 손질된 채소를 쓰지 않습니다.
-                            모든 채소는 신선한 상태로 사용하기 위하여 주 3회 파파존스 QCC(Quality Control Center)에서 매장으로 배송되며,
-                            매일 아침 직원들이 그날 사용할 양을 손질하기 때문에 아삭하고 풍미가 좋습니다.
-                        </p>
-                    </div>
-                </li>
-                <li>
-                    <img src="../images/pizza_in/img-pizzastroy-04.png" alt="">
-                    <div class="txt">
-                        <strong>“자연 모짜렐라 치즈”</strong>
-                        <p>
-                            파파존스 피자에 들어가는 치즈는 최상급 품질의 우유로 만들어진 자연 모짜렐라 치즈로
-                            미국 최대 프리미엄 치즈 제조사인 레프리노를 통해 공급됩니다.
-                            또한, 파파존스의 2블랜드(파마산, 로마노 치즈), 3블랜드(프로볼로네, 아시아고, 폰티나 치즈) 치즈를 통해 다양하고, 풍부한 치즈의 맛과 풍미를 느끼실 수
-                            있습니다.
-                        </p>
-                    </div>
-                </li>
-            </ul>
+            <div class="area">
+                <ul class="papa_story">
+                    <li class="odd">
+                        <img class="fade" src="../images/pizza_in/img-pizzastroy-01.png" alt="" width="360" height="240">
+                        <div class="txt">
+                            <strong>“72시간 4℃에서 저온숙성한 오리지널 수타 도우”</strong>
+                            <p>
+                                더 맛있는 피자는 도우에서부터 시작됩니다.
+                                파파존스의 오리지널 도우는 생산라인에서 매장까지 냉동상태가 아닌 냉장상태로 배달 되며,
+                                최상의 상태로 발효될 때까지 72시간 4℃에서 저온 숙성됩니다.
+                                이러한 노력이 있기에 파파존스는 쫄깃하면서, 풍미를 갖춘 크러스트를 고객에게 제공할 수 있습니다.
+                                특히 파파존스의 특별한 갈릭딥핑소스와 크러스트는 환상적인 궁합을 자랑합니다.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="even">
+                        <img class="fade" src="../images/pizza_in/img-pizzastroy-02.png" alt="" width="360" height="240">
+                        <div class="txt">
+                            <strong>“프리미엄 토마토 소스”</strong>
+                            <p>
+                                파파존스의 “Better Ingredients (더 좋은 재료)”를 위한 히든카드는 바로 토마토 소스입니다.
+                                캘리포니아의 비옥한 지대에서 3개월 동안 잘 자란 토마토는 수확된지 단 6시간 안에 캔 제품으로 가공됩니다.
+                                토마토와 함께 허브, 향신료 등의 재료를 첨가하고,
+                                제조과정에서 열을 최대한 차단시켜 신선한 토마토의 풍미를 느끼실 수 있습니다.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="odd">
+                        <img class="fade" src="../images/pizza_in/img-pizzastroy-03.png" alt="" width="360" height="240">
+                        <div class="txt">
+                            <strong>“매장에서 매일 아침 손질하는 신선한 채소”</strong>
+                            <p>
+                                파파존스는 채소의 신선도를 유지하기 위해 냉동포장이 되거나, 미리 손질된 채소를 쓰지 않습니다.
+                                모든 채소는 신선한 상태로 사용하기 위하여 주 3회 파파존스 QCC(Quality Control Center)에서 매장으로 배송되며,
+                                매일 아침 직원들이 그날 사용할 양을 손질하기 때문에 아삭하고 풍미가 좋습니다.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="even">
+                        <img class="fade" src="../images/pizza_in/img-pizzastroy-04.png" alt="" width="360" height="240">
+                        <div class="txt">
+                            <strong>“자연 모짜렐라 치즈”</strong>
+                            <p>
+                                파파존스 피자에 들어가는 치즈는 최상급 품질의 우유로 만들어진 자연 모짜렐라 치즈로
+                                미국 최대 프리미엄 치즈 제조사인 레프리노를 통해 공급됩니다.
+                                또한, 파파존스의 2블랜드(파마산, 로마노 치즈), 3블랜드(프로볼로네, 아시아고, 폰티나 치즈) 치즈를 통해 다양하고, 풍부한 치즈의 맛과 풍미를 느끼실 수
+                                있습니다.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </article>
-        <article>
+        <article class="nutrient">
             <h3>영양정보</h3>
             <div>
                 <table>
@@ -266,7 +336,7 @@
                 </table>
             </div>
         </article>
-        <article>
+        <article class="allergy">
             <h3>알레르기</h3>
             <p>밀, 대두, 토마토, 우유, 돼지고기, 계란, 조개류()</p>
         </article>

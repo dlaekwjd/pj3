@@ -1,12 +1,13 @@
 @charset "utf-8";
 
 /* 태그초기화 */
-body, ul , li, h1, h2, h3, p, button, input{margin: 0;padding: 0;}
+body, ul , li, h1, h2, h3, p, button, input, th, td{margin: 0;padding: 0;}
 body{font-family: "나눔 고딕", "nanumgothic";font-size: 16px;color: #333}
 ul{list-style: none}
 h1, h2, h3{font-size: inherit}
 a:link, a:visited, a:hover, a:active{color: inherit;text-decoration: none}
 img{max-width: 100%;height: auto;border: none;vertical-align: top}
+table{border-spacing: 0px;border: none;border-collapse: collapse}
 button, input, select{cursor: pointer;font-size: inherit;font-family: inherit;color: inherit;border: none;background: none}
 header, nav, section, footer{display: block;}
 address{font-style: normal}
@@ -38,4 +39,12 @@ address{font-style: normal}
     #footer ul{padding-top: 50px}
     #footer ul li{margin-left: 10px;}
     #footer address{font-size: 13px;margin-top: 25px;line-height: 1.5;}
+}
+
+@media screen and (max-width: 768px) {
+    #footer{height: 295px}
+    #footer img{padding-top: 30px;width: 150px;}
+    #footer ul{padding-top: 20px}
+    #footer ul li{margin-left: 10px;font-size: 14px}
+    #footer address{font-size: 11px;margin-top: 20px;}
 }

@@ -11,7 +11,7 @@
 #snb > ul > li{float: left;width: 140px;margin-left: 35px;}
 #snb > ul > li:first-child{margin-left: 0;}
 #snb ul li a{display: block}
-#snb > ul > li > a{position: relative;height: 100px;line-height: 100px;font-size: 25px;color: #333;font-weight: 500}
+#snb > ul > li > a{position: relative;height: 100px;line-height: 100px;font-size: 22px;color: #333;font-weight: 500}
 #snb > ul > li:hover > a, #gnb > ul > li > a:focus, #gnb > ul > li.on > a{color: #cb1a1a}
 #snb ul li ul li a{height: 34px;line-height: 34px;}
 #snb ul li ul li:hover a, #snb ul li div ul li a:focus, #snb ul li div ul li.on a{color: #cb1a1a}
@@ -19,12 +19,11 @@
 /* content */
 #content{position: relative;padding-top: 100px;}
 .sub_visual{background: url("../images/pizza/sub_topvisual.jpg") no-repeat;width: 100%;height: 630px;color: #666}
-.sub_visual h2, .sub_visual p{position: absolute;left: 50%;margin-left: -653px;}
+.sub_visual h2, .sub_visual p{position: absolute;left: 50%;margin-left: -653px;margin-top: 142px;}
 .sub_visual h2{font-size: 50px;top: 142px;}
 .sub_visual p{font-size: 35px;top: 208px;}
 
 /* tab 버튼 */
-#content div{position: relative;}
 #content div #pizzaTab{position: relative;margin-top: 100px;}
 #content div #pizzaTab >.btnwrap{text-align: center;width: 935px;margin-bottom: 66px;padding-top: 45px;}
 #content div #pizzaTab >.btnwrap > li{float: left;width: 140px;margin-left: 125px;}
@@ -43,42 +42,112 @@
 #content div #pizzaTab .cntwrap > div  > ul > li .txt_box strong{display: block;font-size: 25px;text-align: center}
 #content div #pizzaTab .cntwrap > div  > ul > li .txt_box p{font-size: 14px;text-align: left;margin: 10px 0 28px }
 .txt_box #pizzaKind, .txt_box .num_item, .txt_box #pizzaSize{height: 42px;line-height: 42px;background: #eee}
-#content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaKind{width: 174px;float: left;margin-right: 17px;padding-left: 10px}
+#content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaKind{width: 172px;float: left;margin-right: 13px;padding-left: 10px}
 #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .num_item{position: relative;width: 105px;float: left;}
 .txt_box .num_item input[type="text"]{text-align: center;width: 105px;}
 .txt_box .num_item .num_up{position: absolute;top: 50%;right: 10px;margin-top: -6px;}
 .txt_box .num_item .num_down{position: absolute;top: 50%;left: 10px;}
-#content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaSize{width: 296px;margin-top: 10px;padding-left: 10px;margin-bottom: 18px;}
+#content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaSize{width: 290px;margin-top: 10px;padding-left: 10px;margin-bottom: 18px;}
 #content div #pizzaTab .cntwrap > div  > ul > li .txt_box a{display: inline-block;height: 42px;line-height: 42px;text-align: center;color: #fff;}
-#content div #pizzaTab .cntwrap > div  > ul > li .txt_box .menu{width: 172px;background: #316910;margin-right: 13px;}
+#content div #pizzaTab .cntwrap > div  > ul > li .txt_box .menu{width: 172px;background: #316910;margin-right: 9px;}
 #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .pizza_cart{width: 106px;background: #000}
 
+@media screen and (max-width: 1280px) {
+    .area{width: 100%;}
+    /* header */
+    #header .sub_logo{margin-left: -400px}
+
+    /* snb */
+    #snb > ul{padding-left: 240px;width: 640px}
+    #snb > ul > li{width: 120px;margin-left: 10px;}
+    #snb > ul > li > a{font-size: 18px}
+    #snb ul li div ul li a{font-size: 14px}
+
+    /* content */
+    .sub_visual h2, .sub_visual p{margin-left: -400px}
+
+    /* tab 버튼 */
+    #content div #pizzaTab{margin-top: 50px;}
+    #content div #pizzaTab >.btnwrap{;width: 800px;margin-bottom: 40px;padding-top: 40px;}
+    #content div #pizzaTab >.btnwrap > li{width: 120px;margin-left: 100px;}
+    #content div #pizzaTab >.btnwrap > li > a{font-size: 18px;}
+
+    /* tab 내용 */
+    #content div #pizzaTab .cntwrap > div  > ul{width: 100%;}
+    #content div #pizzaTab .cntwrap > div  > ul > li{width: 480px;height: 220px;margin-bottom: 40px;}
+    #content div #pizzaTab .cntwrap > div  > ul > li > img{float: left;padding-right: 5px;padding-left:5px;margin-top: 35px;width: 200px;}
+    #content div #pizzaTab .cntwrap > div  > ul > li:nth-child(odd){margin-right: 43px;}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box{float: left;width: 260px;margin-top: 10px;}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box strong{font-size: 20px;padding-top: 10px;}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box p{font-size: 12px;text-align: left;margin: 10px 0 15px }
+    .txt_box #pizzaKind, .txt_box .num_item, .txt_box #pizzaSize{height: 25px;line-height: 25px;background: #eee}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaKind{width: 140px;float: left;margin-right: 13px;padding-left: 10px}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaSize{width: 258px;margin-top: 10px;padding-left: 10px;margin-bottom: 18px;}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box a{height: 25px;line-height: 25px;font-size: 14px}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .menu{width: 140px;background: #316910;margin-right: 9px;}
+}
+
+@media screen and (max-width: 768px) {
+
+
+/* snb 
+
+/* content 
+#content{position: relative;padding-top: 100px;}
+.sub_visual{background: url("../images/pizza/sub_topvisual.jpg") no-repeat;width: 100%;height: 630px;color: #666}
+.sub_visual h2, .sub_visual p{position: absolute;left: 50%;margin-left: -653px;margin-top: 142px;}
+.sub_visual h2{font-size: 50px;top: 142px;}
+.sub_visual p{font-size: 35px;top: 208px;}
+*/
+    */
+}
+
+
+
+
 /* pizza 상세 페이지 */
-#content{padding-top: 130px;}
-#content .irish{position: relative;height: 560px;width: 100%}
+#content.sub{padding-top: 130px;}
 #content h2{font-size: 40px;text-align: center}
-#content article h3{font-size: 30px;text-align: center;font-weight: 500}
+#content article{position: relative;padding-top: 70px;text-align: center;width: 1300px;margin: 0 auto}
+#content .irish{width: 100%;position: static;padding-top: 0}
+#content article h3{font-size: 30px;font-weight: 500}
 #content .irish .back{background: #eee;height: 560px;margin-top: 40px;}
-#content .irish div img{padding-top: 108px;float: left;margin-right: 112px;}
-#content .irish div .detail{float: left;width: 570px;margin-top: 77px;text-align: center;font-weight: 500}
+#content .irish div img{padding-top: 108px;float: left;margin: 0 100px;}
+#content .irish div .detail{float: right;width: 570px;margin-top: 77px;text-align: center;font-weight: 500}
 #content .irish div .detail .p_detail{font-size: 20px;padding-top: 20px;font-weight: normal}
 #content .irish div .detail ul{padding: 0 20px}
 #content .irish div .detail ul li{float: left}
 #content .irish div .detail ul li .price{display: inline-block;font-size: 28px;margin-top: 30px;}
 #content .irish div .detail ul li span{color: #cb1a1a;font-size: 30px;padding-left: 30px;}
 #content .irish div .detail div a{margin-top: 43px;display: inline-block;width: 83px;height: 83px;line-height: 83px;background: #cb1a1a;color: #fff;border-radius: 50%;font-weight: normal;margin-left: 31px;font-size: 14px}
+#content .irish div .detail .cntwrap img{position: absolute;top: 0;left: 0;}
 #content .irish div .detail div a:first-child{margin-left: 0;}
 #content .irish div .detail a{display: inline-block;;width: 270px;height: 60px;line-height: 60px;color: #fff;text-align: center;background: #007236;margin-top: 42px;}
-#content .irish div .detail .t_l{text-align: left;padding-top: 43px;}
+#content .irish div .detail .change_txt{text-align: left;padding-top: 43px;font-size: 18px}
+#content .irish div .detail .change_txt span{font-size: 16px}
 
-#content .option{position: relative;padding-top: 70px;text-align: center}
 #content .option ul li{display: inline-block;padding-top: 76px;width: 280px;padding-left: 30px;}
 #content .option ul li:first-child{margin-left: 0;}
 #content .option ul li span{display: block;font-size: 20px;margin-bottom: 25px;font-weight: 500}
 #content .option ul li select{width: 278px;height: 48px;border: 1px solid #ccc;padding-left: 36px;}
 
-#content .topping{position: relative;padding-top: 70px;text-align: center}
 #content .topping ul li{display: inline-block;padding-top: 74px;padding-left: 30px;}
 #content .topping ul li:first-child{padding-left: 0;}
 
-#content .papa{position: relative;padding-top: 70px;}
+#content .papa .papa_story li{margin-top: 65px;}
+#content .papa .papa_story li:after{content: "";display: block;clear: both}
+#content .papa .papa_story li img.fade{position: relative;top: 40px;opacity: 0;filter: Alpha(opacity=0)}
+#content .papa .papa_story li .txt{width: 800px;min-height: 240px;padding: 45px 0;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+#content .papa .papa_story .odd img{float: left;}
+#content .papa .papa_story .odd .txt{float: right}
+#content .papa .papa_story .even img{float: right;}
+#content .papa .papa_story .even .txt{float: left;text-align: right}
+#content .papa .papa_story li .txt strong{font-size: 20px}
+#content .papa .papa_story li .txt p{font-size: 18px;margin-top: 15px;}
+
+#content .nutrient table{width: 1202px;height: 180px;margin: auto;margin-top: 42px;border: 1px solid #ccc;}
+#content .nutrient table th, #content .nutrient table td{border: 1px solid #ccc;}
+
+#content .allergy{padding-bottom: 72px;}
+#content .allergy p{font-size: 20px;margin-top: 35px;font-weight: 500}
+

@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <title> pizza / menu / papajohns </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/sub.css">
     <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/sub.css">
     <!--[if lt IE 9]>
         <script type="text/javascript" src="js/html5shiv.min.js"></script>
     <![endif]-->
     <script src="../js/jquery-1.12.4.min.js
     "></script>
-    <script src="../js/snb.js"></script>
+    <script src="../js/sub.js"></script>
     <script>
         $(document).ready(function () {
             //수량증가,감소
@@ -62,14 +62,15 @@
             $tab.find('.cntwrap > div:first-child').show().attr('aria-hidden', false).siblings().hide().attr('aria-hidden', true);
 
             $tab.find('.btnwrap li a').on('click', function (e) {
-                e.preventDefault();
-                var tgIdx = $(this).parent().index();
-                console.log(tgIdx);
+            e.preventDefault();
+            var tgIdx = $(this).parent().index();
+            console.log(tgIdx);
 
-                $(this).attr('aria-selected', true).parent().addClass('on').siblings().removeClass('on').children().attr('aria-selected', false);
+            $(this).attr('aria-selected', true).parent().addClass('on').siblings().removeClass('on').children().attr('aria-selected', false);
 
-                $(this).closest('.tab').find('.cntwrap > div').eq(tgIdx).show().attr('aria-hidden', false).siblings().hide().attr('aria-hidden', true);
+            $(this).closest('.tab').find('.cntwrap > div').eq(tgIdx).show().attr('aria-hidden', false).siblings().hide().attr('aria-hidden', true);
             });
+            
         });
     </script>
 </head>
@@ -151,7 +152,7 @@
             <h2>MENU</h2>
             <P>파파존스의 피자를 소개합니다.</P>
         </div>
-        <div class="area">
+        <div class="area p_r">
             <div class="tab" id="pizzaTab">
                 <ul class="btnwrap clearfix area" role="tablist" aria-label="파파존스 토핑별 메뉴">
                     <li class="btn1" role="presentation">
