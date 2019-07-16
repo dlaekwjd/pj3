@@ -1,4 +1,4 @@
-$(document).ready(function (){
+$(document).ready(function () {
   /* 네비게이션 */
   $('#header .open_btn').on('click', function (e) {
     e.preventDefault();
@@ -8,8 +8,7 @@ $(document).ready(function (){
         e.preventDefault();
         $(this).parent().show().stop().animate({bottom:'100%'});
     });
-  });
-  
+  });	
   /* onepage scrolling */
   var $menu = $('#indicator ul li');
   var $cnt = $('#container section');
@@ -27,39 +26,40 @@ $(document).ready(function (){
 
   //윈도우창 사이즈의 변경이 있을때마다 $cnt의 높이값을 지정
   $(window).on('resize', function () {
-      clearTimeout(timerResize);
-      setTimeout(function () {
-          //$cnt의 높이값을 지정
-          var cntHei = $(this).height();
-          //console.log(cntHei);
-          $cnt.css({height: cntHei});
+    clearTimeout(timerResize);
+    setTimeout(function () {
+      //$cnt의 높이값을 지정
+      var cntHei = $(this).height();
+      //console.log(cntHei);
+      $cnt.css({
+        height: cntHei
+      });
 
-          //창의 높이가 달라질때마다 offset().top도 달라지므로 resize 이벤트 내부에 선언
-          //#cnt1~#cnt6의 offset().top 할당
-          cntPosT = new Array(total);
-          for (var i = 0; i < total; i++) {
-              cntPosT[i] = $cnt.eq(i).offset().top -
-              headerHei; // *#header가 fixed 속성으로 고정되어 있어서 헤더의 높이만큼 스크롤바는 적게 움직여야 컨텐츠 모두가 보여진다.
-          }
-          //console.log(cntPosT);
+      //창의 높이가 달라질때마다 offset().top도 달라지므로 resize 이벤트 내부에 선언
+      //#cnt1~#cnt6의 offset().top 할당
+      cntPosT = new Array(total);
+      for (var i = 0; i < total; i++) {
+        cntPosT[i] = $cnt.eq(i).offset().top - headerHei; // *#header가 fixed 속성으로 고정되어 있어서 헤더의 높이만큼 스크롤바는 적게 움직여야 컨텐츠 모두가 보여진다.
+      }
+      //console.log(cntPosT);
 
-          /*  
-          추가 : 창사이즈를 변경해도 활성화된 인디케이터와 같은 섹션이 보여지도록 
-          1) 현재 활성화된 li의 인덱스번호를 변수에 저장
-          2) offset().top을 저장한 배열에서 1번의 인덱스번호에 해당하는 값을 변수에 저장
-          3) 애니메이트 시켜서 위치 이동
-          */
-          var onIdx = $('#indicator ul li.on').index();
-          var tgPos = cntPosT[onIdx];
-          //console.log(onIdx, tgPos);
-          $(window).off('scroll');
-          $('html, body').stop().animate({
-              scrollTop: tgPos
-          }, 400, function () {
-              $(window).on('scroll', scrollMove);
-          });
+      /*  
+      추가 : 창사이즈를 변경해도 활성화된 인디케이터와 같은 섹션이 보여지도록 
+      1) 현재 활성화된 li의 인덱스번호를 변수에 저장
+      2) offset().top을 저장한 배열에서 1번의 인덱스번호에 해당하는 값을 변수에 저장
+      3) 애니메이트 시켜서 위치 이동
+      */
+      var onIdx = $('#indicator ul li.on').index();
+      var tgPos = cntPosT[onIdx];
+      //console.log(onIdx, tgPos);
+      $(window).off('scroll');
+      $('html, body').stop().animate({
+        scrollTop: tgPos
+      }, 400, function () {
+        $(window).on('scroll', scrollMove);
+      });
 
-      }, 50);
+    }, 50);
   });
   $(window).trigger('resize');
 
@@ -70,13 +70,11 @@ $(document).ready(function (){
 
     tgIdx = $(this).parent().index();
     $(this).parent().addClass('on').siblings().removeClass('on');
-    $(window).off(
-    'scroll'); //클릭한 인디케이터 중간에 끼어있는 li는 활성과 비활성을 일으키기 때문에 제어하기 위해 scroll 이벤트를 off메서드 이용하여 강제 해제
+    $(window).off('scroll'); //클릭한 인디케이터 중간에 끼어있는 li는 활성과 비활성을 일으키기 때문에 제어하기 위해 scroll 이벤트를 off메서드 이용하여 강제 해제
     $('html, body').stop().animate({
-        scrollTop: cntPosT[tgIdx]
+      scrollTop: cntPosT[tgIdx]
     }, 400, function () {
-        $(window).on('scroll',
-        scrollMove); //클릭 후 스크롤을 직접 움직이는 경우에 대비해 다시 스크롤 이벤트 연결
+      $(window).on('scroll', scrollMove); //클릭 후 스크롤을 직접 움직이는 경우에 대비해 다시 스크롤 이벤트 연결
     });
   });
 
@@ -86,12 +84,12 @@ $(document).ready(function (){
   function scrollMove() {
     clearTimeout(timerScroll);
     setTimeout(function () {
-        var scrollT = $(this).scrollTop();
-        //console.log(scrollT);
-        $menu.each(function (idx) {
-            if (scrollT >= cntPosT[idx]) $(this).addClass('on').siblings()
-                .removeClass('on');
-        });
+      var scrollT = $(this).scrollTop();
+      //console.log(scrollT);
+      $menu.each(function (idx) {
+        if (scrollT >= cntPosT[idx]) $(this).addClass('on').siblings()
+          .removeClass('on');
+      });
     }, 100);
   }
 
@@ -111,11 +109,11 @@ $(document).ready(function (){
       //console.log(delta);     //음수 : 휠내리기, 양수 : 휠올리기
 
       if (delta < 0 && tgIdx < total - 1) { //down
-          tgIdx++;
-          //console.log(tgIdx, delta, '휠 내리기')
+        tgIdx++;
+        //console.log(tgIdx, delta, '휠 내리기')
       } else if (delta > 0 && tgIdx > 0) { //up
-          tgIdx--;
-          //console.log(tgIdx, delta, '휠 올리기')
+        tgIdx--;
+        //console.log(tgIdx, delta, '휠 올리기')
       }
       //배열 [tgIdx]에 있는 값으로 animate()
       $('html, body').stop().animate({
@@ -131,21 +129,21 @@ $(document).ready(function (){
   */
   $(document).on('keydown', function (e) {
     if ($('html, body').is(':animated')) return false;
-    console.log(e.keyCode);
+    //console.log(e.keyCode);
     if (e.keyCode == 40 && tgIdx < total - 1) tgIdx++;
     else if (e.keyCode == 38 && tgIdx > 0) tgIdx--;
     $('html, body').stop().animate({
-        scrollTop: cntPosT[tgIdx]
+      scrollTop: cntPosT[tgIdx]
     }, 400);
-  });	
+  });
 
   /* section 1 슬라이드 제어 */
   var $slider = $('#mainSlider');
   var $visEle = $slider.find('> .visual > li');
   var $indiEle = $slider.find('> .paging li');
-  var current = 0;  //현재 보여지는 .visual > li의 인덱스 번호
-  var nextNum;     //다음에 보여질 컨텐츠의 인덱스 번호(클릭한 인디케이터의 인덱스번호)
-  var timer;			
+  var current = 0; //현재 보여지는 .visual > li의 인덱스 번호
+  var nextNum; //다음에 보여질 컨텐츠의 인덱스 번호(클릭한 인디케이터의 인덱스번호)
+  var timer;
 
   //초기설정 : 비주얼과 인디케이터의 첫번째 li에 .on 추가하기
   $visEle.eq(0).add($indiEle.eq(0)).addClass('on');
@@ -159,50 +157,56 @@ $(document).ready(function (){
     //추가제어 1) 자동실행 멈춤
     clearInterval(timer);
     //추가제어 2) 현재 보여지는 슬라이더는 다시 클릭하지 못하게
-    if ( current == nextNum ) return false;
+    if (current == nextNum) return false;
 
     //.indicator li에 .on 제어, .visual li animate()
-    active ();
+    active();
   });
 
-  function active () {
+  function active() {
     //a) .visual li와 .indicator li => .on 클래스명 제어
     $visEle.eq(nextNum).addClass('on').siblings().removeClass('on');
     $indiEle.eq(nextNum).addClass('on').siblings().removeClass('on');
 
     //b) .visual li => animate() : 기존 투명도 1에서 0, 지금 클릭한것 0 에서 1
-    $visEle.eq(current).stop().animate({opacity: 0, filter: 'Alpha(opacity=0)'}, 400)
-    $visEle.eq(nextNum).stop().animate({opacity: 1, filter: 'Alpha(opacity=100)'}, 400)
+    $visEle.eq(current).stop().animate({
+      opacity: 0,
+      filter: 'Alpha(opacity=0)'
+    }, 400)
+    $visEle.eq(nextNum).stop().animate({
+      opacity: 1,
+      filter: 'Alpha(opacity=100)'
+    }, 400)
 
-    current = nextNum; 
+    current = nextNum;
   }
 
   //2) 자동실행 함수
-  function playTimer () {
+  function playTimer() {
     timer = setInterval(function () {
-      nextNum = current + 1;  //증감연산을 작성하면 오류, 현재 nextNum의 값은 0,1,2
+      nextNum = current + 1; //증감연산을 작성하면 오류, 현재 nextNum의 값은 0,1,2
       if (nextNum == 3) nextNum = 0;
 
       //.visual li와 .indicator li에 .on 제어, .visual li animate()
-      active ();
+      active();
     }, 4000);
   }
-  playTimer ();
+  playTimer();
 
   //3) 슬라이더로 마우스가 진입하거나 포커스가 오면 자동실행 멈추기
   $slider.on({
-    'mouseenter focusin' : function () {
-      clearInterval (timer);
+    'mouseenter focusin': function () {
+      clearInterval(timer);
     },
-    'mouseleave' : function () {
-      playTimer ();
+    'mouseleave': function () {
+      playTimer();
     }
   });
   $slider.find('[data-link="first"]').on('keydown', function (e) {
-    if (e.shiftKey && e.keyCode == 9) playTimer ();
+    if (e.shiftKey && e.keyCode == 9) playTimer();
   });
   $slider.find('[data-link="last"]').on('keydown', function (e) {
-    if (!e.shiftKey && e.keyCode == 9) playTimer ();
+    if (!e.shiftKey && e.keyCode == 9) playTimer();
   });
 
   /* cnt2 bestmenu */
@@ -217,107 +221,145 @@ $(document).ready(function (){
   //2) 탭버튼 클릭
   $tab.find('.btnwrap li a').on('click', function (e) {
     e.preventDefault();
-    var tgIdx = $(this).parent().index();
-    //console.log(tgIdx);
+    var tgNum = $(this).parent().index(); //onepage scrolling과 충돌로 변수명 변경 tgIdx => tgNum
+    //console.log(tgNum);
 
     //3) .btnwrap li에게 선택된 것은 .on 추가하고 나머지는 .on 제거 => 자식태그에 aria-selected 제어
     $(this).attr('aria-selected', true).parent().addClass('on').siblings().removeClass('on').children().attr('aria-selected', false);
 
     //4) 상세 div가 보여질 것과 숨길것 제어 => aira-hidden도 제어
-    $(this).closest('.tab').find('.cntwrap > div').eq(tgIdx).show().attr('aria-hidden', false).siblings().hide().attr('aria-hidden', true);
+    $(this).closest('.tab').find('.cntwrap > div').eq(tgNum).show().attr('aria-hidden', false).siblings().hide().attr('aria-hidden', true);
     console.log();
 
     //슬라이더 함수 호출
-    multiSlider (tgIdx);
+    multiSlider (tgNum);
   });
 
-  /* #cnt3 : NEW MENU 탭 슬라이더  */	
-  //최초 전체 탭메뉴를 우선 활성화
+  /* #cnt3 : NEW MENU 탭 - 슬라이더  */
+  //최초 전체 탭메뉴(0)를 우선 활성화
   multiSlider (0);
-    
-  //복제, 삽입, 접근성 추가
-  for (var i=0; i<5; i++) {
-    var $tgCnt = $('#newTab .cntwrap > div').eq(i);  //#newCnt1 ~ #newCnt5
+
+  //복제, 삽입
+  for (var i = 0; i < 5; i++) {
+    var $tgCnt = $('#newTab .cntwrap > div').eq(i); //#newCnt1 ~ #newCnt5
     //복제
     var $front = $tgCnt.find('ul li').eq(2).nextAll().clone().attr({class: 'frontcopy'});
     var $back = $tgCnt.find('ul li:nth-child(0), ul li:nth-child(1), ul li:nth-child(2), ul li:nth-child(3)').clone().attr({class: 'backcopy'});
     $tgCnt.find('ul').prepend($front).append($back);
-
-    //접근성 추가
-    $tgCnt.find('ul li').attr({'aria-hidden': true});
-    $tgCnt.find('ul li').eq(2).nextUntil($tgCnt.find('ul li').eq(6)).attr({'aria-hidden': false});
   }
 
-    var prevClass;
-    var nowClass;
-    var $body = $("body");
-	var liWid;
-    $(window).on('load resize', function () {
-      var $tgCntList = $('#newTab .cntwrap > div ul');
-      liWid = $tgCntList.children().outerWidth(true);
-      $tgCntList.css({width: liWid * 12, marginLeft: liWid * 3 * -1});//복제하기 전 첫번째 li가 우선 보여지기 marginLeft을 마이너스로 제어
-      console.log(liWid * 12, liWid * 3 * -1);
-  
-      prevClass = $body.attr("class");
-      //console.log(prevClass); load되면 undefined가 찍힘
-      var winWidth = $(this).width();
-  
-      //해상도별 body에 클래스명 추가하기
-      if (winWidth<768) $body.removeClass().addClass("mobile");
-      else if (winWidth<=1280) $body.removeClass().addClass("tablet");
-      else $body.removeClass().addClass("pc");
-      
-      nowClass = $body.attr("class");
-      //console.log(prevClass, nowClass);
-  
-      //디바이스의 변경 체크 : 스크립트로 추가한 스타일을 removeAttrr("style")로 제거해서 디바이스의 충돌이 일어나지 않게 하고 다시 width, margin-left를 재 지정함
-      if (prevClass != nowClass && prevClass != "undefined") {
-        $tgCntList.removeAttr("style").css({width: liWid * 12, marginLeft: liWid * 3 * -1});
-      }
-    });
+	var prevClass;
+	var nowClass;
+	var $body = $('body');
+	var liWid; //li 하나의 너비
+	var winWidth; //윈도우 너비
+	var once; //한번에 보여질 li 개수
+	var onceMove;
 
-  /* new menu 슬라이드 : resize 이전 값을 받아오는 것이 문제 이다 */
-  function multiSlider (getIdx) {
-    var $tgCnt = $('#newTab .cntwrap > div').eq(getIdx);  //#newCnt1 ~ #newCnt5
-    var once = 3;		//한번에 보여질 li 개수
-    var onceMove = once * liWid;
-    var totalNum = 12;		//앞3복제, 뒤3복제로 li 개수가 12개로 늘어남
-    var current = 3;			//슬라이더 복제후 현재 인덱스 번호 저장 : 3,6만 가능함
-    //console.log(getIdx, $tgCnt.attr('id'), liWid, onceMove, totalNum, liWid * 12);
+	$(window).on('load resize', function () {
+		var $tgCntList = $('#newTab .cntwrap > div ul');
+		liWid = $tgCntList.children().outerWidth(true);
+		$tgCntList.css({width: liWid * 12, marginLeft: liWid * 3 * -1}); //복제하기 전 첫번째 li가 우선 보여지기 marginLeft을 마이너스로 제어
+		//console.log(liWid * 12, liWid * 3 * -1);
 
-    //이전, 다음 클릭 이벤트
-    $tgCnt.find('.prev_next a').on('click', function (e) {
-      e.preventDefault();
+		prevClass = $body.attr('class');
+		winWidth = $(this).width();
 
-      if ($tgCnt.find('ul').is(':animated')) return false;
+		//해상도별 body에 클래스명 추가하기
+		if (winWidth <= 768) $body.removeClass().addClass('mobile');
+		else if (winWidth <= 1280) $body.removeClass().addClass('tablet');
+		else $body.removeClass().addClass('pc');
 
-      var btnNum = $(this).index();
-      //console.log(btnNum);	//0:이전, 1:다음
+		nowClass = $body.attr('class');
+		//console.log(prevClass, nowClass);
 
-      //이전버튼 클릭
-      if (btnNum == 0) {
-        current -= once;
-        if (current < once) {
-          current = 6;		
-          $tgCnt.find('ul').css({marginLeft: (totalNum-once) * -liWid});
-        }
-      }
-      //다음버튼 클릭
-      else {
-        current += once;
-        if (current > 6) { 
-          current = once;
-          $tgCnt.find('ul').css({marginLeft: 0});
-        }
-      }
-      $tgCnt.find('ul li').attr({'aria-hidden': true});
-      $tgCnt.find('ul li').eq(current-1).nextUntil($tgCnt.find('ul li').eq(current+3)).attr({'aria-hidden': false});
-      $tgCnt.find('ul').stop().delay(100).animate({marginLeft: current * -liWid});
-    });	
-  }
-  
+		//디바이스의 변경 체크 : 스크립트로 추가한 스타일을 removeAttrr('style')로 제거해서 디바이스의 충돌이 일어나지 않게 하고 다시 width, margin-left를 재 지정함 => 가장 처음 슬라이더로 이동시켜 놓음
+		if (prevClass != nowClass) {
+			$tgCntList.removeAttr('style').css({width: liWid * 12, marginLeft: liWid * 3 * -1});
+		}
+
+		if ($(window).width() <= 768) {
+			once = 1; //한번에 보여질 li 개수
+		} else {
+			once = 3; //한번에 보여질 li 개수
+		}
+		/*		*/
+		if ($(window).width() <= 768) {
+			 $tgCntList.find('li').eq(3).attr({'aria-hidden': false}).siblings().attr({'aria-hidden': true});
+			once = 1; //한번에 보여질 li 개수
+		} else {
+			$tgCntList.find('li').attr({'aria-hidden': true});
+			$tgCntList.find('li').eq(2).nextUntil($tgCntList.find('li').eq(6)).attr({'aria-hidden': false});
+			once = 3; //한번에 보여질 li 개수
+		}
+
+		onceMove = once * liWid; //한번에 움직일 크기
+
+	}); //$(window).on('load resize')
+
+    function multiSlider(getIdx) {
+		var $tgCnt = $('#newTab .cntwrap > div').eq(getIdx); //#newCnt1 ~ #newCnt5
+		var totalNum = 12; //앞3복제, 뒤3복제로 li 개수가 12개로 늘어남
+		var start = 3;
+		var current = 3; //슬라이더 복제후 현재 인덱스 번호 저장 : 3,6만 가능함
+		//console.log(getIdx, $tgCnt.attr('id'), liWid, once, onceMove, totalNum, liWid * 12);
+
+		//이전 클릭 이벤트
+        $tgCnt.find('.prev_next .prev').on('click', function (e) {
+          e.preventDefault();
+          if ($tgCnt.find('ul').is(':animated')) return false;
+
+          current -= once;
+          $tgCnt.find('ul li').attr({'aria-hidden': true});
+
+          if (winWidth <= 768) {
+            if (current < start) {
+              current = 8; //total - once*4	
+              $tgCnt.find('ul').css({
+                marginLeft: (current + 1) * -liWid
+              });
+              console.log(current, liWid, (totalNum - once) * -liWid);
+            }
+            $tgCnt.find('ul li').eq(current).attr({'aria-hidden': false});
+            $tgCnt.find('ul').stop().delay(100).animate({marginLeft: current * -liWid});
+          } else {
+            if (current < start) {
+              current = 6; //total - once*2
+              $tgCnt.find('ul').css({marginLeft: (current + 3) * -liWid});
+            }
+            $tgCnt.find('ul li').eq(current - 1).nextUntil($tgCnt.find('ul li').eq(current + 3)).attr({'aria-hidden': false});
+            $tgCnt.find('ul').stop().delay(100).animate({marginLeft: current * -liWid});
+          }
+        }); //이전 클릭
+
+		//다음 클릭 이벤트
+        $tgCnt.find('.prev_next .next').on('click', function (e) {
+          e.preventDefault();
+          if ($tgCnt.find('ul').is(':animated')) return false;
+
+          current += once;
+          $tgCnt.find('ul li').attr({'aria-hidden': true});
+
+          if (winWidth <= 768) {
+            if (current > 8) { //total - once*4
+              current = start;
+              $tgCnt.find('ul').css({marginLeft: liWid * 2 * -1});
+            }
+            console.log(current);
+            $tgCnt.find('ul li').eq(current).attr({'aria-hidden': false});
+            $tgCnt.find('ul').stop().delay(100).animate({marginLeft: current * -liWid});
+          } else {
+            if (current > 6) { //total - once*2
+              current = start;
+              $tgCnt.find('ul').css({marginLeft: 0});
+            }
+            $tgCnt.find('ul li').eq(current - 1).nextUntil($tgCnt.find('ul li').eq(current + 3)).attr({'aria-hidden': false});
+            $tgCnt.find('ul').stop().delay(100).animate({marginLeft: current * -liWid});
+          }
+        });		//다음 버튼 클릭
+    }
+
 });
-
 	/*
 	  접근성추가
 	  마크업 <div class="slider" aria-live="polite">

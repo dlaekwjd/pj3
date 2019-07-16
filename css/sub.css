@@ -1,20 +1,20 @@
 @charset "utf-8";
 
-/* pizza */
 /* header */
 #header{position: fixed;top: 0;left: 0;right: 0;height: 100px;background: #fff;border-bottom: 1px solid #ccc;z-index: 200}
 #header .sub_logo{position: absolute;top: 10px;left: 50%;margin-left: -540px;z-index: 100;}
 
 /* snb */
-#snb{position: absolute;top: 0;left: 0;right: 0;text-align: center;background: #fff;}
-#snb > ul{position: relative;padding-left: 320px;width: 840px;height: 100px;margin: 0 auto}
-#snb > ul > li{float: left;width: 140px;margin-left: 35px;}
-#snb > ul > li:first-child{margin-left: 0;}
-#snb ul li a{display: block}
-#snb > ul > li > a{position: relative;height: 100px;line-height: 100px;font-size: 22px;color: #333;font-weight: 500}
-#snb > ul > li:hover > a, #gnb > ul > li > a:focus, #gnb > ul > li.on > a{color: #cb1a1a}
-#snb ul li ul li a{height: 34px;line-height: 34px;}
-#snb ul li ul li:hover a, #snb ul li div ul li a:focus, #snb ul li div ul li.on a{color: #cb1a1a}
+#pcSnb{position: absolute;top: 0;left: 0;right: 0;text-align: center;background: #fff;}
+#pcSnb > ul{position: relative;padding-left: 320px;width: 840px;height: 100px;margin: 0 auto}
+#pcSnb > ul > li{float: left;width: 140px;margin-left: 35px;}
+#pcSnb > ul > li:first-child{margin-left: 0;}
+#pcSnb ul li a{display: block}
+#pcSnb > ul > li > a{position: relative;height: 100px;line-height: 100px;font-size: 22px;color: #333;font-weight: 500}
+#pcSnb > ul > li:hover > a, #pcSnb > ul > li > a:focus, #pcSnb > ul > li.on > a{color: #cb1a1a}
+#pcSnb ul li ul li a{height: 34px;line-height: 34px;}
+#pcSnb ul li ul li:hover a, #pcSnb ul li div ul li a:focus, #pcSnb ul li div ul li.on a{color: #cb1a1a}
+#mSnb{display: none}
 
 /* content */
 #content{position: relative;padding-top: 100px;}
@@ -58,10 +58,10 @@
     #header .sub_logo{margin-left: -400px}
 
     /* snb */
-    #snb > ul{padding-left: 240px;width: 640px}
-    #snb > ul > li{width: 120px;margin-left: 10px;}
-    #snb > ul > li > a{font-size: 18px}
-    #snb ul li div ul li a{font-size: 14px}
+    #pcSnb > ul{padding-left: 240px;width: 640px}
+    #pcSnb > ul > li{width: 120px;margin-left: 10px;}
+    #pcSnb > ul > li > a{font-size: 18px}
+    #pcSnb ul li div ul li a{font-size: 14px}
 
     /* content */
     .sub_visual h2, .sub_visual p{margin-left: -400px}
@@ -88,31 +88,48 @@
 }
 
 @media screen and (max-width: 768px) {
+    #header{height: 80px}
+    #header .sub_logo{top: 0px;margin-left: -76px}
+    #header .open_btn{position: absolute;top: 25px;right: 5%;}
+    #pcSnb{display: none}
+    #mSnb{display: block;position: fixed;left: 0;bottom: 100%;width: 100%;height: 100%;background: #fff;text-align: center;font-weight: 500;z-index: 500;}
+    #mSnb > ul{font-size: 20px;color: #cb1a1a;width: 100%;margin: 100px auto;}
+    #mSnb > ul > li{width: 100%;border-bottom: 1px solid #cb1a1a;}  
+    #mSnb > ul > li > a{display: block;width: 100%;height: 100px;line-height: 100px}
+    #mSnb > ul > li:hover a, #mSnb > ul > li a:focus, #mSnb > ul > li.on a{background: #006e62;color: #fff}
+    #mSnb > ul li div{display: none}
+    #mSnb .close_btn{position: absolute;top: 48px;right: 5%;width: 30px;height: 30px;}
+    
+    #content{padding-top: 80px;}
+    .sub_visual{background-image: url("../images/pizza/sub_mobile.jpg");height: 325px;background-size: cover}
+    .sub_visual h2, .sub_visual p{position: absolute;left: 50%;margin-left: -230px;margin-top: 35px;}
+    .sub_visual h2{font-size: 20px;top: 142px;}
+    .sub_visual p{font-size: 18px;top: 208px;}
+    
+    /* tab 버튼 */
+    #content div #pizzaTab{margin-top: 10px;}
+    #content div #pizzaTab >.btnwrap{width: 430px;margin: 40px auto;padding-top: 0;}
+    #content div #pizzaTab >.btnwrap > li{width: 100px;margin-left: 10px;}
+    #content div #pizzaTab >.btnwrap > li > a{font-size: 16px;border: none;font-weight: 700}
+    
+    /* 
+    #content div #pizzaTab >.btnwrap > li > a{display: block;font-size: 20px;height: 30px;margin-bottom: 7px;border-bottom: 2px solid #333;}
+    #content div #pizzaTab{position: relative;margin-top: 100px;}
+#content div #pizzaTab >.btnwrap{text-align: center;width: 935px;margin-bottom: 66px;padding-top: 45px;}
+#content div #pizzaTab >.btnwrap > li{float: left;width: 140px;margin-left: 125px;}
+#content div #pizzaTab >.btnwrap > li:first-child{margin-left: 0;}
+#content div #pizzaTab >.btnwrap > li > a:hover, #content div #pizzaTab >.btnwrap > li > a:focus, #content div #pizzaTab >.btnwrap > li.on > a{color: #cb1a1a;border-color: #cb1a1a;}
 
-
-/* snb 
-
-/* content 
-#content{position: relative;padding-top: 100px;}
-.sub_visual{background: url("../images/pizza/sub_topvisual.jpg") no-repeat;width: 100%;height: 630px;color: #666}
-.sub_visual h2, .sub_visual p{position: absolute;left: 50%;margin-left: -653px;margin-top: 142px;}
-.sub_visual h2{font-size: 50px;top: 142px;}
-.sub_visual p{font-size: 35px;top: 208px;}
-*/
     */
 }
 
-
-
-
 /* pizza 상세 페이지 */
-#content.sub{padding-top: 130px;}
+#content.sub{padding-top: 100px;}
 #content h2{font-size: 40px;text-align: center}
 #content article{position: relative;padding-top: 70px;text-align: center;width: 1300px;margin: 0 auto}
 #content .irish{width: 100%;position: static;padding-top: 0}
 #content article h3{font-size: 30px;font-weight: 500}
 #content .irish .back{background: #eee;height: 560px;margin-top: 40px;}
-#content .irish div img{padding-top: 108px;float: left;margin: 0 100px;}
 #content .irish div .detail{float: right;width: 570px;margin-top: 77px;text-align: center;font-weight: 500}
 #content .irish div .detail .p_detail{font-size: 20px;padding-top: 20px;font-weight: normal}
 #content .irish div .detail ul{padding: 0 20px}
@@ -120,7 +137,7 @@
 #content .irish div .detail ul li .price{display: inline-block;font-size: 28px;margin-top: 30px;}
 #content .irish div .detail ul li span{color: #cb1a1a;font-size: 30px;padding-left: 30px;}
 #content .irish div .detail div a{margin-top: 43px;display: inline-block;width: 83px;height: 83px;line-height: 83px;background: #cb1a1a;color: #fff;border-radius: 50%;font-weight: normal;margin-left: 31px;font-size: 14px}
-#content .irish div .detail .cntwrap img{position: absolute;top: 0;left: 0;}
+#content .irish div .detail .cntwrap img{position: absolute;top: 22%;left: 50%;margin-left: -452px;}
 #content .irish div .detail div a:first-child{margin-left: 0;}
 #content .irish div .detail a{display: inline-block;;width: 270px;height: 60px;line-height: 60px;color: #fff;text-align: center;background: #007236;margin-top: 42px;}
 #content .irish div .detail .change_txt{text-align: left;padding-top: 43px;font-size: 18px}
@@ -151,3 +168,42 @@
 #content .allergy{padding-bottom: 72px;}
 #content .allergy p{font-size: 20px;margin-top: 35px;font-weight: 500}
 
+@media screen and (max-width: 1280px) {
+    .area{width: 100%;}
+    /* header */
+    #header .sub_logo{margin-left: -400px}
+
+    /* snb */
+    #pcSnb > ul{padding-left: 240px;width: 640px}
+    #pcSnb > ul > li{width: 120px;margin-left: 10px;}
+    #pcSnb > ul > li > a{font-size: 18px}
+    #pcSnb ul li div ul li a{font-size: 14px}
+
+    #content article h3{font-size: 28px}
+    #content .irish div .detail .cntwrap img{position: absolute;top: 25%;left: 50%;margin-left: -472px;width: 422px;height: 322px;}
+
+    #content .option{text-align: center}
+    #content .option ul li{display: inline-block;padding-top: 76px;width: 280px;padding-left: 30px;}
+    #content .option ul li:first-child{margin-left: 0;}
+    #content .option ul li span{display: block;font-size: 20px;margin-bottom: 25px;font-weight: 500}
+    #content .option ul li select{width: 278px;height: 48px;border: 1px solid #ccc;padding-left: 36px;}
+
+
+
+}
+
+@media screen and (max-width: 768px) {
+    #header{height: 80px}
+    #header .sub_logo{top: 0px;margin-left: -76px}
+    #header .open_btn{position: absolute;top: 25px;right: 5%;}
+    #pcSnb{display: none}
+    #mSnb{display: block;position: fixed;left: 0;bottom: 100%;width: 100%;height: 100%;background: #fff;text-align: center;font-weight: 500;z-index: 500;}
+    #mSnb > ul{font-size: 20px;color: #cb1a1a;width: 100%;margin: 100px auto;}
+    #mSnb > ul > li{width: 100%;border-bottom: 1px solid #cb1a1a;}  
+    #mSnb > ul > li > a{display: block;width: 100%;height: 100px;line-height: 100px}
+    #mSnb > ul > li:hover a, #mSnb > ul > li a:focus, #mSnb > ul > li.on a{background: #006e62;color: #fff}
+    #mSnb > ul li div{display: none}
+    #mSnb .close_btn{position: absolute;top: 48px;right: 5%;width: 30px;height: 30px;}
+    
+    
+}

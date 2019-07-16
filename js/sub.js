@@ -1,6 +1,6 @@
 $(document).ready(function (){
     //snb navigation
-    var $snb = $('#snb > ul');
+    var $snb = $('#pcSnb > ul');
     var $snbDep2 = $snb.find('> li > div');
 
     var dep1 = $('body').data('dep-one') - 1;
@@ -25,5 +25,14 @@ $(document).ready(function (){
             'on');
     }
   
-    
+    //모바일 네비게이션
+    $('#header .open_btn').on('click', function (e) {
+        e.preventDefault();
+        $(this).parent().siblings('#mSnb').show().stop().animate({bottom:0});
+
+        $('#mSnb .close_btn').on('click', function (e) {
+        e.preventDefault();
+            $(this).parent().show().stop().animate({bottom:'100%'});
+        });
+    });
 });

@@ -250,16 +250,17 @@ div .size ul li p{font-size: 18px;margin-left: 10px;}
     #cnt2  #bestTab .cntwrap > div > div .size ul li span{width: 20px;height: 20px;line-height: 20px}
     #cnt2  #bestTab .cntwrap > div > div .size a{margin-top: 20px;width: 130px;height: 30px;line-height: 30px;padding-left: 18px;font-size: 12px}
 
-    #container #cnt3 #newTab > ul{margin: 20px auto;}
-    #container #cnt3 #newTab > ul > li{margin-left: 5px}
-    #container #cnt3 #newTab > ul > li > a{width: 60px;height: 60px;line-height: 60px;font-size: 14px}
-    #cnt3 #newTab div div .new_slider{margin: 20px auto;}
-    #cnt3 #newTab div div .new_slider .area{width: 300px;}
-    #cnt3 #newTab div div .new_slider div ul{height: 400px;}
-    #cnt3 #newTab div div .new_slider div ul li{width: 270px;height: 400px;margin-right: 10px}
-    #cnt3 #newTab div div .new_slider .prev_next a{top: 153px}
-    #cnt3 #newTab div div .new_slider .prev_next .prev{margin-left: -230px;}
-    #cnt3 #newTab div div .new_slider .prev_next .next{margin-left: 170px;}
+	#cnt3 #newTab .cntwrap .new_slider .area{width: 300px;}
+	#cnt3 #newTab > ul > li{margin-left: 5px;}
+	#cnt3 #newTab > ul > li > a{width: 60px;height: 60px;line-height: 60px;font-size: 14px}
+	#cnt3 #newTab div div .new_slider div ul{height: 380px;}
+	#cnt3 #newTab div div .new_slider div ul li{width: 300px;height: 380px;margin-right: 0px;}
+	#cnt3 #newTab div div .new_slider div ul li strong, #cnt3 div div .new_slider div ul li p{padding-left: 10px;padding-right: 10px} 
+	#cnt3 #newTab div div .new_slider div ul li strong{font-size: 20px;margin-top: 10px}
+	#cnt3 #newTab div div .new_slider div ul li a{margin: 10px 0 15px 10px}
+	#cnt3 #newTab div div .new_slider .prev_next a{top: 150px;width: 25px;margin-left: 0;}
+	#cnt3 #newTab div div .new_slider .prev_next .prev{left: 0;margin-left: 0;}
+	#cnt3 #newTab div div .new_slider .prev_next .next{left: auto;right: 0;}
     
     #cnt4 div .left{width: 100%;float: none}
     #cnt4 div .left ul li, #cnt4 div .left ul li .txt, #cnt4 div .left ul li .txt2{height: 210px;}
