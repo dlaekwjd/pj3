@@ -259,6 +259,7 @@
     #content article{padding-top: 58px}
     #content article h3{font-size: 22px}
 
+    #content .irish{padding-top: 0;}
     #content .irish div .detail{margin: 0 auto;float: none;width: 300px;padding-top: 30px;}
     #content .irish div .detail .p_detail{font-size: 14px;padding-top: 10px;font-weight: normal}
     #content .irish div .detail ul{padding: 0 5px}
