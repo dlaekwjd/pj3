@@ -42,9 +42,9 @@ address{font-style: normal}
 }
 
 @media screen and (max-width: 768px) {
-    #footer{height: 295px}
-    #footer img{padding-top: 30px;width: 150px;}
+    #footer{height: 230px;width: 100%;}
+    #footer img{padding-top: 20px;width: 120px;}
     #footer ul{padding-top: 20px}
-    #footer ul li{margin-left: 10px;font-size: 14px}
-    #footer address{font-size: 11px;margin-top: 20px;}
+    #footer ul li{margin-left: 5px;font-size: 12px}
+    #footer address{font-size: 11px;width: 95%;margin: 20px auto}
 }

@@ -64,16 +64,19 @@
     #pcSnb ul li div ul li a{font-size: 14px}
 
     /* content */
-    .sub_visual h2, .sub_visual p{margin-left: -400px}
+    .sub_visual h2, .sub_visual p{margin-left: -500px}
+    .sub_visual h2{top: 132px;}
+    .sub_visual p{top: 228px;}
+
 
     /* tab 버튼 */
     #content div #pizzaTab{margin-top: 50px;}
-    #content div #pizzaTab >.btnwrap{;width: 800px;margin-bottom: 40px;padding-top: 40px;}
+    #content div #pizzaTab >.btnwrap{width: 800px;margin-bottom: 40px;padding-top: 40px;}
     #content div #pizzaTab >.btnwrap > li{width: 120px;margin-left: 100px;}
     #content div #pizzaTab >.btnwrap > li > a{font-size: 18px;}
 
     /* tab 내용 */
-    #content div #pizzaTab .cntwrap > div  > ul{width: 100%;}
+    #content div #pizzaTab .cntwrap > div  > ul{width: 1007px;margin: 0 auto;}
     #content div #pizzaTab .cntwrap > div  > ul > li{width: 480px;height: 220px;margin-bottom: 40px;}
     #content div #pizzaTab .cntwrap > div  > ul > li > img{float: left;padding-right: 5px;padding-left:5px;margin-top: 35px;width: 200px;}
     #content div #pizzaTab .cntwrap > div  > ul > li:nth-child(odd){margin-right: 43px;}
@@ -87,9 +90,29 @@
     #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .menu{width: 140px;background: #316910;margin-right: 9px;}
 }
 
+@media screen and (max-width: 1024px) {
+    .area{width: 100%;}
+    .sub_visual h2, .sub_visual p{margin-left: -400px}
+    #content div #pizzaTab .cntwrap > div  > ul{width: 980px;}
+    #content div #pizzaTab .cntwrap > div  > ul > li:nth-child(odd){margin-right: 16px;}
+    #content div #pizzaTab .cntwrap > div  > ul > li > img{float: left;padding-right: 5px;padding-left:5px;margin-top: 35px;width: 190px;}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box{float: left;width: 250px;margin-top: 8px;}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box strong{font-size: 18px}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box p{font-size: 12px;}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaKind{width: 140px;float: left}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaSize{width: 238px;}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .num_item{width: 85px;float: left}
+    .txt_box .num_item input[type="text"]{text-align: center;width: 85px;}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box a{height: 25px;line-height: 25px;font-size: 14px}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .menu{width: 120px}
+
+
+}
+
+
 @media screen and (max-width: 768px) {
     #header{height: 80px}
-    #header .sub_logo{top: 0px;margin-left: -76px}
+    #header .sub_logo{position: static;margin-left: 0;text-align: center}
     #header .open_btn{position: absolute;top: 25px;right: 5%;}
     #pcSnb{display: none}
     #mSnb{display: block;position: fixed;left: 0;bottom: 100%;width: 100%;height: 100%;background: #fff;text-align: center;font-weight: 500;z-index: 500;}
@@ -102,55 +125,77 @@
     
     #content{padding-top: 80px;}
     .sub_visual{background-image: url("../images/pizza/sub_mobile.jpg");height: 325px;background-size: cover}
-    .sub_visual h2, .sub_visual p{position: absolute;left: 50%;margin-left: -230px;margin-top: 35px;}
-    .sub_visual h2{font-size: 20px;top: 142px;}
-    .sub_visual p{font-size: 18px;top: 208px;}
+    .sub_visual h2, .sub_visual p{position: static;margin: 0;text-align: center}
+    .sub_visual h2{font-size: 20px}
+    .sub_visual p{font-size: 18px;}
     
     /* tab 버튼 */
     #content div #pizzaTab{margin-top: 10px;}
-    #content div #pizzaTab >.btnwrap{width: 430px;margin: 40px auto;padding-top: 0;}
-    #content div #pizzaTab >.btnwrap > li{width: 100px;margin-left: 10px;}
-    #content div #pizzaTab >.btnwrap > li > a{font-size: 16px;border: none;font-weight: 700}
-    
-    /* 
-    #content div #pizzaTab >.btnwrap > li > a{display: block;font-size: 20px;height: 30px;margin-bottom: 7px;border-bottom: 2px solid #333;}
-    #content div #pizzaTab{position: relative;margin-top: 100px;}
-#content div #pizzaTab >.btnwrap{text-align: center;width: 935px;margin-bottom: 66px;padding-top: 45px;}
-#content div #pizzaTab >.btnwrap > li{float: left;width: 140px;margin-left: 125px;}
-#content div #pizzaTab >.btnwrap > li:first-child{margin-left: 0;}
-#content div #pizzaTab >.btnwrap > li > a:hover, #content div #pizzaTab >.btnwrap > li > a:focus, #content div #pizzaTab >.btnwrap > li.on > a{color: #cb1a1a;border-color: #cb1a1a;}
+    #content div #pizzaTab >.btnwrap{width: 100%;padding: 0 20px;box-sizing: border-box;margin: 30px auto 20px;padding-top: 0;}
+    #content div #pizzaTab >.btnwrap > li{width: 23%;margin-left: 2%;}
+    #content div #pizzaTab >.btnwrap > li > a{font-size: 13px;border: none;font-weight: 700;margin-bottom: 0;}
 
-    */
+    #content div #pizzaTab .cntwrap > div  > ul{width: 100%;padding: 0 20px;box-sizing: border-box;margin: 0 auto;}
+    #content div #pizzaTab .cntwrap > div  > ul > li{width: auto;height: auto;margin-bottom: 40px;padding: 10px 0}
+    #content div #pizzaTab .cntwrap > div  > ul > li:nth-child(odd){margin-right: 0;}
+
+    #content div #pizzaTab .cntwrap > div  > ul > li > img{padding-right: 2%;padding-left:2%;width: 41%;margin-top: 20px;}
+
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box{width: 53%;margin-top: 0;padding-right: 2%;height: auto;}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box strong{font-size: 16px}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box p{font-size: 12px;margin: 5px 0;}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaKind{width: 55%;float: left;font-size: 12px;margin-right: 5%}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .num_item{width: 40%;float: left;text-align: center}
+    .txt_box .num_item input[type="text"]{width: 40%;}
+
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaSize{width: 100%;font-size: 12px;margin-bottom: 5px;margin-top: 5px;}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box a{height: auto;line-height: 25px;font-size: 12px;margin-bottom: 10px;}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .menu{width: 53%;background: #316910;margin-right: 1%;}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .pizza_cart{width: 43%;background: #000}
+}
+
+@media screen and (max-width: 768px) and (min-width: 415px) {
+    #content div #pizzaTab .cntwrap > div  > ul > li{display: table}
+    #content div #pizzaTab .cntwrap > div  > ul > li > img, #content div #pizzaTab .cntwrap > div  > ul > li .txt_box{display: table-cell;vertical-align: middle;float: none;}
+    #content div #pizzaTab .cntwrap > div  > ul > li > img{width: 85%}
+    /* #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .cell{} */
+
 }
 
 /* pizza 상세 페이지 */
 #content.sub{padding-top: 100px;}
-#content h2{font-size: 40px;text-align: center}
+#content h2{font-size: 40px;text-align: center;padding-top: 35px;}
 #content article{position: relative;padding-top: 70px;text-align: center;width: 1300px;margin: 0 auto}
-#content .irish{width: 100%;position: static;padding-top: 0}
 #content article h3{font-size: 30px;font-weight: 500}
+
+/* 피자주문 */
+#content .irish{width: 100%;position: static;padding-top: 0}
 #content .irish .back{background: #eee;height: 560px;margin-top: 40px;}
-#content .irish div .detail{float: right;width: 570px;margin-top: 77px;text-align: center;font-weight: 500}
+#content .irish div .detail{float: right;width: 650px;margin-top: 77px;text-align: center;font-weight: 500}
 #content .irish div .detail .p_detail{font-size: 20px;padding-top: 20px;font-weight: normal}
 #content .irish div .detail ul{padding: 0 20px}
 #content .irish div .detail ul li{float: left}
 #content .irish div .detail ul li .price{display: inline-block;font-size: 28px;margin-top: 30px;}
 #content .irish div .detail ul li span{color: #cb1a1a;font-size: 30px;padding-left: 30px;}
 #content .irish div .detail div a{margin-top: 43px;display: inline-block;width: 83px;height: 83px;line-height: 83px;background: #cb1a1a;color: #fff;border-radius: 50%;font-weight: normal;margin-left: 31px;font-size: 14px}
-#content .irish div .detail .cntwrap img{position: absolute;top: 22%;left: 50%;margin-left: -452px;}
+#content .irish div .detail .cntwrap img{position: absolute;top: 22%;right: 50%;margin-right: 112px;}
 #content .irish div .detail div a:first-child{margin-left: 0;}
 #content .irish div .detail a{display: inline-block;;width: 270px;height: 60px;line-height: 60px;color: #fff;text-align: center;background: #007236;margin-top: 42px;}
 #content .irish div .detail .change_txt{text-align: left;padding-top: 43px;font-size: 18px}
 #content .irish div .detail .change_txt span{font-size: 16px}
 
-#content .option ul li{display: inline-block;padding-top: 76px;width: 280px;padding-left: 30px;}
-#content .option ul li:first-child{margin-left: 0;}
-#content .option ul li span{display: block;font-size: 20px;margin-bottom: 25px;font-weight: 500}
-#content .option ul li select{width: 278px;height: 48px;border: 1px solid #ccc;padding-left: 36px;}
+/* 옵션변경 */
+#content .option .pcChange li{display: inline-block;padding-top: 76px;width: 280px;padding-left: 30px;}
+#content .option .pcChangel li:first-child{padding-left: 0;}
+#content .option .pcChangel li span{display: block;font-size: 20px;margin-bottom: 25px;font-weight: 500}
+#content .option .pcChange li select{width: 278px;height: 48px;border: 1px solid #ccc;padding-left: 36px;}
+#content .option .mChange{display: none;}
 
+/* 토핑안내 */
 #content .topping ul li{display: inline-block;padding-top: 74px;padding-left: 30px;}
 #content .topping ul li:first-child{padding-left: 0;}
 
+/* 파파존스 이야기 */
 #content .papa .papa_story li{margin-top: 65px;}
 #content .papa .papa_story li:after{content: "";display: block;clear: both}
 #content .papa .papa_story li img.fade{position: relative;top: 40px;opacity: 0;filter: Alpha(opacity=0)}
@@ -162,16 +207,18 @@
 #content .papa .papa_story li .txt strong{font-size: 20px}
 #content .papa .papa_story li .txt p{font-size: 18px;margin-top: 15px;}
 
-#content .nutrient table{width: 1202px;height: 180px;margin: auto;margin-top: 42px;border: 1px solid #ccc;}
-#content .nutrient table th, #content .nutrient table td{border: 1px solid #ccc;}
+/* 영양정보 */
+#content .nutrient .pcTable{width: 1202px;height: 180px;margin: auto;margin-top: 42px;border: 1px solid #ccc;}
+#content .nutrient .pcTable th, #content .nutrient table td{border: 1px solid #ccc;}
+#content .nutrient .mTable{display: none}
 
+/* 알레르기 */
 #content .allergy{padding-bottom: 72px;}
 #content .allergy p{font-size: 20px;margin-top: 35px;font-weight: 500}
 
 @media screen and (max-width: 1280px) {
     .area{width: 100%;}
     /* header */
-    #header .sub_logo{margin-left: -400px}
 
     /* snb */
     #pcSnb > ul{padding-left: 240px;width: 640px}
@@ -179,31 +226,80 @@
     #pcSnb > ul > li > a{font-size: 18px}
     #pcSnb ul li div ul li a{font-size: 14px}
 
+    #content.sub h2{font-size: 0;line-height: 0;width: 1px;height: 1px;overflow: hidden;position: absolute;top: 0;left: -9999px;text-indent: -9999px}
+    #content article{width: 100%}
     #content article h3{font-size: 28px}
-    #content .irish div .detail .cntwrap img{position: absolute;top: 25%;left: 50%;margin-left: -472px;width: 422px;height: 322px;}
+    #content .irish{padding-top: 20px;}
+    #content .irish .back{margin-top: 0;}
 
-    #content .option{text-align: center}
-    #content .option ul li{display: inline-block;padding-top: 76px;width: 280px;padding-left: 30px;}
-    #content .option ul li:first-child{margin-left: 0;}
-    #content .option ul li span{display: block;font-size: 20px;margin-bottom: 25px;font-weight: 500}
-    #content .option ul li select{width: 278px;height: 48px;border: 1px solid #ccc;padding-left: 36px;}
+    #content .option .pcChange li{display: inline-block;padding-top: 76px;width: 260px;padding-left: 30px;}
 
+    #content .topping ul li{padding-left: 15px;}
 
+    #content .papa .papa_story{width: 1000px;margin: 0 auto;}
+    #content .papa .papa_story li .txt{width: 600px;}
+}
+
+@media screen and (max-width: 1024px) {
+    #content .irish div .detail{width: 500px;margin-top: 62px;}
+    #content .irish div .detail .p_detail{font-size: 18px;padding-top: 18px}
+    #content .irish div .detail ul{padding: 0 10px}
+    #content .irish div .detail ul li .price{display: inline-block;font-size: 25px;}
+    #content .irish div .detail ul li span{font-size: 25px;padding-left: 25px;}
+    #content .irish div .detail .cntwrap img{margin-right: 15px;}
+
+    #content .option .pcChange li{width: 220px;padding-left: 10px;}
+    #content .option .pcChange li select{width: 220px;height: 38px}
+
+    #content .topping ul li{padding-left: 10px;}
+    #content .topping ul li > img{width: 151px;height: auto;}
+
+    #content .nutrient .pcTable{width: 980px;height: 150px}
 
 }
 
 @media screen and (max-width: 768px) {
-    #header{height: 80px}
-    #header .sub_logo{top: 0px;margin-left: -76px}
-    #header .open_btn{position: absolute;top: 25px;right: 5%;}
-    #pcSnb{display: none}
-    #mSnb{display: block;position: fixed;left: 0;bottom: 100%;width: 100%;height: 100%;background: #fff;text-align: center;font-weight: 500;z-index: 500;}
-    #mSnb > ul{font-size: 20px;color: #cb1a1a;width: 100%;margin: 100px auto;}
-    #mSnb > ul > li{width: 100%;border-bottom: 1px solid #cb1a1a;}  
-    #mSnb > ul > li > a{display: block;width: 100%;height: 100px;line-height: 100px}
-    #mSnb > ul > li:hover a, #mSnb > ul > li a:focus, #mSnb > ul > li.on a{background: #006e62;color: #fff}
-    #mSnb > ul li div{display: none}
-    #mSnb .close_btn{position: absolute;top: 48px;right: 5%;width: 30px;height: 30px;}
     
+    #content.sub{padding-top: 80px;}
+    #content article{padding-top: 58px}
+    #content article h3{font-size: 22px}
+
+    #content .irish{padding-top: 0;}
+    #content .irish div .detail{margin: 0 auto;float: none;width: 300px;padding-top: 30px;}
+    #content .irish div .detail .p_detail{font-size: 14px;padding-top: 10px;font-weight: normal}
+    #content .irish div .detail ul{padding: 0 5px}
+    #content .irish div .detail ul li .price{font-size: 16px;margin-top: 10px;}
+    #content .irish div .detail ul li{float: left}
+    #content .irish div .detail ul li span{color: #cb1a1a;font-size: 16px;padding-left: 15px;}
+    #content .irish div .detail div a{margin-top: 15px;display: inline-block;width: 54px;height: 54px;line-height: 54px;margin-left: 10px;font-size: 12px}
+    #content .irish div .detail .cntwrap img{top: 330px;left: 50%;margin-left: -130px;;width: 261px;height: auto;}
+    #content .irish div .detail .change_txt{padding-top: 23px;font-size: 16px}
+    #content .irish div .detail .change_txt span{font-size: 12px}
+    #content .irish div .detail a{width: 220px;height: 40px;line-height: 40px;margin-top: 22px;}
     
+    #content .option .pcChange{display: none;}
+    #content .option .mChange{display: block;}
+    #content .option .mChange li{display: inline-block;padding-top: 30px;width: 60px;padding-left: 15px;}
+    #content .option .mChange li span{font-size: 14px;margin-bottom: 15px;font-weight: 500}
+    #content .option .mChange li select{width: 50px;height: 30px;font-size: 12px;border-bottom: 1px solid #000;}
+
+    #content .topping ul li{padding-top: 30px;padding-left: 20px;}
+
+    #content .papa h3{font-size: 20px}
+    #content .papa .papa_story{width: 100%}
+    #content .papa .papa_story li{margin-top: 30px;padding: 0 20px}
+    #content .papa .papa_story .even img, #content .papa .papa_story .odd img{float: none;width: auto;height: auto;}
+    #content .papa .papa_story .even .txt, #content .papa .papa_story .odd .txt{width: auto;min-height: 150px;float: none;margin: 0 auto;text-align: center}
+    #content .papa .papa_story li .txt strong{font-size: 16px}
+    #content .papa .papa_story li .txt p{font-size: 14px;margin-top: 15px;}
+    
+    #content .nutrient .pcTable{display: none;}
+    #content .nutrient .mTable{display: block;margin: 0 auto;margin-top: 20px;width: 320px}
+    #content .nutrient .mTable th, #content .nutrient .mTable td{border: 1px solid #ccc;height: 30px;}
+    #content .nutrient .mTable th{width: 150px;}
+    #content .nutrient .mTable td{width: 100px;}
+
+    #content .allergy{padding-bottom: 50px;}
+    #content .allergy p{font-size: 16px;margin-top: 20px}
+
 }

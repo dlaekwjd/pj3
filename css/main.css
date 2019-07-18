@@ -103,9 +103,10 @@ div .size ul li p{font-size: 18px;margin-left: 10px;}
 #cnt3 #newTab div div .new_slider div ul li strong{display: block;font-size: 24px;color: #444;margin-top: 25px;font-weight: 600}
 #cnt3 #newTab div div .new_slider div ul li p{color: #c6c6c6;margin-top: 18px;}
 #cnt3 #newTab div div .new_slider div ul li a{display: block;background: url("../images/common/arrow.png") no-repeat 90% 13px #f43402;width: 145px;height: 39px;color: #fff;line-height: 39px;padding-left: 20px;margin: 32px 0 25px 47px}
-#cnt3 #newTab div div .new_slider .prev_next a{position: absolute;top: 213px;left: 50%;}
-#cnt3 #newTab div div .new_slider .prev_next .prev{margin-left: -751px;}
-#cnt3 #newTab div div .new_slider .prev_next .next{margin-left: 691px;}
+#cnt3 #newTab div div .new_slider #pc_prev_next a{position: absolute;top: 213px;left: 50%;}
+#cnt3 #newTab div div .new_slider #pc_prev_next .prev{margin-left: -751px;}
+#cnt3 #newTab div div .new_slider #pc_prev_next .next{margin-left: 691px;}
+#cnt3 #newTab div div .new_slider #m_prev_next{display: none;}
 
 /* section4 */
 #cnt4 div .left, #cnt4 div .right{width: 650px;}
@@ -185,8 +186,8 @@ div .size ul li p{font-size: 18px;margin-left: 10px;}
     #cnt3 #newTab div div .new_slider div ul li strong, #cnt3 div div .new_slider div ul li p{padding-left: 20px;padding-right: 20px;} 
     #cnt3 #newTab div div .new_slider div ul li strong{font-size: 22px;margin-top: 20px}
     #cnt3 #newTab div div .new_slider div ul li p{margin-top: 10px;font-size: 14px}
-    #cnt3 #newTab div div .new_slider .prev_next .prev{margin-left: -500px;}
-    #cnt3 #newTab div div .new_slider .prev_next .next{margin-left: 440px;}
+    #cnt3 #newTab div div .new_slider #pc_prev_next .prev{margin-left: -500px;}
+    #cnt3 #newTab div div .new_slider #pc_prev_next .next{margin-left: 440px;}
     
     #cnt4 div .left, #cnt4 div .right{width: 50%}
     #cnt4 div .left ul{height: auto}
@@ -233,9 +234,9 @@ div .size ul li p{font-size: 18px;margin-left: 10px;}
     #cnt1 #mainSlider .paging li.on:after{width: 100px}
     
     #container #cnt2 h3, #container #cnt3 h3{font-size: 30px;padding-top: 20px;}
-    #container #cnt2 > p, #container #cnt3 > p{font-size: 14px;padding-top: 8px}
+    #container #cnt2 > p, #container #cnt3 > p{font-size: 14px;padding-top: 5px;width: 90%;margin: 0 auto;}
 
-    #cnt2 #bestTab{margin-top: 20px;background: none}
+    #cnt2 #bestTab{margin-top: 10px;background: none}
     #cnt2 #bestTab > .btnwrap{position: absolute;top: 200px;left: 50%;margin-left: -137px;}
     #cnt2 #bestTab > .btnwrap > li:first-child{margin-left: 0;}
     #cnt2 #bestTab > .btnwrap > li{margin-left: 10px;width: 60px;height: 60px;}
@@ -250,30 +251,32 @@ div .size ul li p{font-size: 18px;margin-left: 10px;}
     #cnt2  #bestTab .cntwrap > div > div .size ul li span{width: 20px;height: 20px;line-height: 20px}
     #cnt2  #bestTab .cntwrap > div > div .size a{margin-top: 20px;width: 130px;height: 30px;line-height: 30px;padding-left: 18px;font-size: 12px}
 
+    #container #cnt3 #newTab > ul > li{margin-left: 2px}
+    #container #cnt3 #newTab > ul > li > a{width: 60px;height: 60px;line-height: 60px;font-size: 14px}
 	#cnt3 #newTab .cntwrap .new_slider .area{width: 300px;}
-	#cnt3 #newTab > ul > li{margin-left: 5px;}
-	#cnt3 #newTab > ul > li > a{width: 60px;height: 60px;line-height: 60px;font-size: 14px}
 	#cnt3 #newTab div div .new_slider div ul{height: 380px;}
 	#cnt3 #newTab div div .new_slider div ul li{width: 300px;height: 380px;margin-right: 0px;}
 	#cnt3 #newTab div div .new_slider div ul li strong, #cnt3 div div .new_slider div ul li p{padding-left: 10px;padding-right: 10px} 
 	#cnt3 #newTab div div .new_slider div ul li strong{font-size: 20px;margin-top: 10px}
-	#cnt3 #newTab div div .new_slider div ul li a{margin: 10px 0 15px 10px}
-	#cnt3 #newTab div div .new_slider .prev_next a{top: 150px;width: 25px;margin-left: 0;}
-	#cnt3 #newTab div div .new_slider .prev_next .prev{left: 0;margin-left: 0;}
-	#cnt3 #newTab div div .new_slider .prev_next .next{left: auto;right: 0;}
+    #cnt3 #newTab div div .new_slider div ul li a{margin: 10px 0 15px 10px}
+    #cnt3 #newTab div div .new_slider #pc_prev_next{display: none}
+    #cnt3 #newTab div div .new_slider #m_prev_next{display: block}
+    #cnt3 #newTab div div .new_slider #m_prev_next a{position: absolute;top: 50%;width: 30px;}
+    #cnt3 #newTab div div .new_slider #m_prev_next .next{right: 0;}
+
     
     #cnt4 div .left{width: 100%;float: none}
     #cnt4 div .left ul li, #cnt4 div .left ul li .txt, #cnt4 div .left ul li .txt2{height: 210px;}
     #cnt4 div ul li img{display: none}
     #cnt4 div .left ul li .txt{float: left}
-    #cnt4 div .left ul li div strong, #cnt4 div .left ul li .txt2 strong{font-size: 18px;padding-top: 50px}
+    #cnt4 div .left ul li div strong, #cnt4 div .left ul li .txt2 strong{font-size: 16px;padding-top: 50px}
     #cnt4 div .left ul li div strong:after{top: 25px}
     #cnt4 div .left ul li .txt2 strong::after{top: 25px;}
-    #cnt4 div .left ul li div p{font-size: 14px;margin-top: 10px;}
+    #cnt4 div .left ul li div p{font-size: 12px;margin-top: 10px;}
     #cnt4 div .right .friday{margin-top: -630px;}
     #cnt4 div .right div strong{font-size: 20px}
     #cnt4 div .right div strong:after{top: 100px}
-    #cnt4 div .right div p{font-size: 14px;}
+    #cnt4 div .right div p{font-size: 12px;}
     #cnt4 div .right div a{width: 140px;padding-left: 10px;font-size: 14px}
     #cnt4 div .right .friday{height: 420px;}
     #cnt4 div .right .store{height: 210px;}

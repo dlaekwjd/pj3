@@ -89,10 +89,12 @@
     </div>
 
     <header id="header">
-        <h1 class="sub_logo">
-            <a href="../index.html"><img src="../images/pizza/sub-logo.png" alt="파파존스" width="153" height="80"></a>
-        </h1>
-        <a href="" class="open_btn"><img src="../images/pizza/sub_open.png" alt="네비게이션 열기" width="30" height="30"></a>
+        <div class="head_top">
+            <h1 class="sub_logo">
+                <a href="../index.html"><img src="../images/pizza/sub-logo.png" alt="파파존스" width="153" height="80"></a>
+            </h1>
+            <a href="" class="open_btn"><img src="../images/pizza/sub_open.png" alt="네비게이션 열기" width="30" height="30"></a>
+        </div>
         <nav id="pcSnb">
             <ul class="clearfix">
                 <li>
@@ -262,39 +264,75 @@
         </article>
         <article class="option">
             <h3>옵션변경</h3>
-            <ul class="clearfix opt_change">
+            <ul class="clearfix pcChange">
                 <li>
                     <span>소스 조절</span>
                     <select name="sourse" id="sourse" title="피자 도우 선택">
-                        <option value="소스 보통(normal)">소스 보통(normal)</option>
-                        <option value="소스 조금(LS)">소스 조금(LS)</option>
-                        <option value="소스 많이(XS)">소스 많이(XS)</option>
-                        <option value="소스 없음(NS)">소스 없음(NS)</option>
+                        <option value="소스 보통">소스 보통</option>
+                        <option value="소스 조금">소스 조금</option>
+                        <option value="소스 많이">소스 많이</option>
+                        <option value="소스 없음">소스 없음</option>
                     </select>
                 </li>
                 <li>
                     <span>치즈조절</span>
                     <select name="cheese" id="cheese" title="피자 치즈 선택">
-                        <option value="치즈 보통(normal)">치즈 보통(normal)</option>
-                        <option value="치즈 조금(LC)">치즈 조금(LC)</option>
-                        <option value="치즈 없음(NC)">치즈 없음(NC)</option>
+                        <option value="치즈 보통">치즈 보통</option>
+                        <option value="치즈 조금">치즈 조금</option>
+                        <option value="치즈 없음">치즈 없음</option>
                     </select>
                 </li>
                 <li>
                     <span>굽기 조절</span>
                     <select name="roast" id="roast" title="피자 굽기 선택">
-                        <option value="기본 굽기(normal)">기본 굽기(normal)</option>
-                        <option value="바싹 굽기(WD)">바싹 굽기(WD)</option>
+                        <option value="기본 굽기">기본 굽기</option>
+                        <option value="바싹 굽기)">바싹 굽기)</option>
                     </select>
                 </li>
                 <li>
                     <span>조각 컷팅</span>
                     <select name="cut" id="cut" title="피자 조각 선택">
-                        <option value="기본 컷팅(normal)">기본 컷팅(normal)</option>
+                        <option value="기본 컷팅">기본 컷팅</option>
                         <option value="사각 컷팅(#)">사각 컷팅(#)</option>
                         <option value="6조각 컷팅(6Cut)">6조각 컷팅(6Cut)</option>
                         <option value="8조각 컷팅(8Cut)">8조각 컷팅(8Cut)</option>
                         <option value="10조각 컷팅(10Cut)">10조각 컷팅(10Cut)</option>
+                    </select>
+                </li>
+            </ul>
+            <ul class="clearfix mChange">
+                <li>
+                    <span>소스 조절</span>
+                    <select name="sourse" id="sourse" title="피자 도우 선택">
+                        <option value="보통">보통</option>
+                        <option value="조금">조금</option>
+                        <option value="많이">많이</option>
+                        <option value="없음">없음</option>
+                    </select>
+                </li>
+                <li>
+                    <span>치즈조절</span>
+                    <select name="cheese" id="cheese" title="피자 치즈 선택">
+                        <option value="보통">보통</option>
+                        <option value="조금">조금</option>
+                        <option value="없음">없음</option>
+                    </select>
+                </li>
+                <li>
+                    <span>굽기 조절</span>
+                    <select name="roast" id="roast" title="피자 굽기 선택">
+                        <option value="기본">기본</option>
+                        <option value="바싹">바싹</option>
+                    </select>
+                </li>
+                <li>
+                    <span>조각 컷팅</span>
+                    <select name="cut" id="cut" title="피자 조각 선택">
+                        <option value="기본">기본</option>
+                        <option value="사각">사각</option>
+                        <option value="6조각">6조각</option>
+                        <option value="8조각">8조각</option>
+                        <option value="10조각">10조각</option>
                     </select>
                 </li>
             </ul>
@@ -311,8 +349,8 @@
             </ul>
         </article>
         <article class="papa">
-            <h3>파파존스 피자는 이렇게 만들어 집니다</h3>
-            <div class="area">
+            <h3>파파존스 피자는 이렇게 만들어집니다</h3>
+            <div>
                 <ul class="papa_story">
                     <li class="odd">
                         <img class="fade" src="../images/pizza_in/img-pizzastroy-01.png" alt="" width="360" height="240">
@@ -368,7 +406,7 @@
         <article class="nutrient">
             <h3>영양정보</h3>
             <div>
-                <table>
+                <table class="pcTable">
                     <tr>
                         <th>사이즈</th>
                         <th>기준조각/중량(g)</th>
@@ -394,6 +432,43 @@
                         <td>2</td>
                         <td>11</td>
                         <td>4</td>
+                        <td>390</td>
+                    </tr>
+                </table>
+                <table class="mTable">
+                    <tr>
+                        <th>사이즈</td>
+                        <td>L</td>
+                        <td>F</td>
+                    </tr>
+                    <tr>
+                        <th>기준조각/중량(g)</td>
+                        <td>100</td>
+                        <td>151</td>
+                    </tr>
+                    <tr>
+                        <th>열량(kcal)</td>
+                        <td>242</td>
+                        <td>364</td>
+                    </tr>
+                    <tr>
+                        <th>당류(g)</td>
+                        <td>2</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <th>단백질(g)</td>
+                        <td>8</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <th>포화지방(g)</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <th>나트륨(mg)</th>
+                        <td>290</td>
                         <td>390</td>
                     </tr>
                 </table>

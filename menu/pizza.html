@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title> pizza / menu / papajohns </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/sub.css">
     <!--[if lt IE 9]>
@@ -224,13 +224,13 @@
                         <a href="" id="pTab1" role="tab" aria-controls="pizzaCnt1">전체보기</a>
                     </li>
                     <li class="btn2" role="presentation">
-                        <a href="" id="pTab2" role="tab" aria-controls="pizzaCnt2">오리지널 피자</a>
+                        <a href="" id="pTab2" role="tab" aria-controls="pizzaCnt2">오리지널피자</a>
                     </li>
                     <li class="btn3" role="presentation">
-                        <a href="" id="pTab3" role="tab" aria-controls="pizzaCnt3">프리미엄 피자</a>
+                        <a href="" id="pTab3" role="tab" aria-controls="pizzaCnt3">프리미엄피자</a>
                     </li>
                     <li class="btn4" role="presentation">
-                        <a href="" id="pTab4" role="tab" aria-controls="pizzaCnt4">스페셜 피자</a>
+                        <a href="" id="pTab4" role="tab" aria-controls="pizzaCnt4">스페셜피자</a>
                     </li>
                 </ul>
                 <div class="cntwrap" role="presentation">
@@ -239,33 +239,35 @@
                             <li>
                                 <img src="../images/pizza/pizza-1.png" alt="">
                                 <div class="txt_box clearfix">
-                                    <strong class="pizzaTit ">감바스 피자</strong>
-                                    <p>통통한 새우에 올리브오일과 바삭한 갈릭 후레이크, 상큼한 토마토와 레몬, 치즈가 어우러진 피자</p>
-                                    <form action="" id="pizza">
-                                        <select name="pizzaDough" id="pizzaKind" title="피자 도우 종류">
-                                            <option value="">오리지널</option>
-                                            <option value="">씬</option>
-                                            <option value="">치즈롤</option>
-                                        </select>
-                                        <div class="num_item">
-                                            <label for="amount1"><span class="blind">수량</span></label>
-                                            <input type="text" name="amount1" id="amount1" value="1" readonly="readonly">
-                                            <a href="#" class="num_up">
-                                                <img src="../images/pizza/plus.png" alt="수량추가">
-                                            </a>
-                                            <a href="#" class="num_down">
-                                                <img src="../images/pizza/minus.png" alt="수량추가">
-                                            </a>
-                                        </div>
-                                        <select name="pizzaPrice" id="pizzaSize" title="피자 사이즈와 가격">
-                                            <option value="">Large 28,500원</option>
-                                            <option value="">Family 32,900원</option>
-                                            <option value="">Papa 45,900원</option>
-                                        </select>
-                                        <a href="sub2.html" class="menu">메뉴 상세히 보기</a>
-                                        <a href="" class="pizza_cart">장바구니 담기</a>
+                                    <div class="cell">
+                                        <strong class="pizzaTit ">감바스 피자</strong>
+                                        <p>통통한 새우에 올리브오일과 바삭한 갈릭 후레이크, 상큼한 토마토와 레몬, 치즈가 어우러진 피자</p>
+                                        <form action="" id="pizza">
+                                            <select name="pizzaDough" id="pizzaKind" title="피자 도우 종류">
+                                                <option value="">오리지널</option>
+                                                <option value="">씬</option>
+                                                <option value="">치즈롤</option>
+                                            </select>
+                                            <div class="num_item">
+                                                <label for="amount1"><span class="blind">수량</span></label>
+                                                <input type="text" name="amount1" id="amount1" value="1" readonly="readonly">
+                                                <a href="#" class="num_up">
+                                                    <img src="../images/pizza/plus.png" alt="수량추가">
+                                                </a>
+                                                <a href="#" class="num_down">
+                                                    <img src="../images/pizza/minus.png" alt="수량추가">
+                                                </a>
+                                            </div>
+                                            <select name="pizzaPrice" id="pizzaSize" title="피자 사이즈와 가격">
+                                                <option value="">Large 28,500원</option>
+                                                <option value="">Family 32,900원</option>
+                                                <option value="">Papa 45,900원</option>
+                                            </select>
+                                            <a href="sub2.html" class="menu">메뉴 상세히 보기</a>
+                                            <a href="" class="pizza_cart">장바구니 담기</a>
+                                        </form>
+                                    </div>
                                 </div>
-                                </form>
                             </li>
                             <li>
                                 <img src="../images/pizza/pizza-2.png" alt="">
