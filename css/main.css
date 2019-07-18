@@ -1,6 +1,8 @@
 @charset "utf-8";
 
 /* 전체 공통과 사이즈가 큰 PC */
+*:focus{outline: 1px solid red}
+
 /* header */
 #header .logo, #header .util, #header .open_btn{position: absolute;z-index: 150;}
 #header .logo{top: 47px;left: 82px;}

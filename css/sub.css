@@ -21,7 +21,7 @@
 .sub_visual{background: url("../images/pizza/sub_topvisual.jpg") no-repeat;width: 100%;height: 630px;color: #666}
 .sub_visual h2, .sub_visual p{position: absolute;left: 50%;margin-left: -653px;margin-top: 142px;}
 .sub_visual h2{font-size: 50px;top: 142px;}
-.sub_visual p{font-size: 35px;top: 208px;}
+.sub_visual p{font-size: 35px;top: 228px;}
 
 /* tab 버튼 */
 #content div #pizzaTab{position: relative;margin-top: 100px;}
@@ -139,13 +139,13 @@
     #content div #pizzaTab .cntwrap > div  > ul > li{width: auto;height: auto;margin-bottom: 40px;padding: 10px 0}
     #content div #pizzaTab .cntwrap > div  > ul > li:nth-child(odd){margin-right: 0;}
 
-    #content div #pizzaTab .cntwrap > div  > ul > li > img{padding-right: 2%;padding-left:2%;width: 41%;margin-top: 20px;}
+    #content div #pizzaTab .cntwrap > div  > ul > li > img{padding-right: 2%;padding-left:2%;width: 41%;margin-top: 25px;}
 
     #content div #pizzaTab .cntwrap > div  > ul > li .txt_box{width: 53%;margin-top: 0;padding-right: 2%;height: auto;}
     #content div #pizzaTab .cntwrap > div  > ul > li .txt_box strong{font-size: 16px}
     #content div #pizzaTab .cntwrap > div  > ul > li .txt_box p{font-size: 12px;margin: 5px 0;}
     #content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaKind{width: 55%;float: left;font-size: 12px;margin-right: 5%}
-    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .num_item{width: 40%;float: left;text-align: center}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .num_item{width: 40%;float: left;text-align: center;font-size: 12px}
     .txt_box .num_item input[type="text"]{width: 40%;}
 
     #content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaSize{width: 100%;font-size: 12px;margin-bottom: 5px;margin-top: 5px;}
@@ -188,7 +188,7 @@
 #content .option .pcChange li{display: inline-block;padding-top: 76px;width: 280px;padding-left: 30px;}
 #content .option .pcChangel li:first-child{padding-left: 0;}
 #content .option .pcChangel li span{display: block;font-size: 20px;margin-bottom: 25px;font-weight: 500}
-#content .option .pcChange li select{width: 278px;height: 48px;border: 1px solid #ccc;padding-left: 36px;}
+#content .option .pcChange li select{width: 278px;height: 48px;border: 1px solid #ccc;padding-left: 36px;margin-top: 20px;}
 #content .option .mChange{display: none;}
 
 /* 토핑안내 */
@@ -279,9 +279,9 @@
     
     #content .option .pcChange{display: none;}
     #content .option .mChange{display: block;}
-    #content .option .mChange li{display: inline-block;padding-top: 30px;width: 60px;padding-left: 15px;}
+    #content .option .mChange li{display: inline-block;padding-top: 30px;width: 70px;padding-left: 10px;}
     #content .option .mChange li span{font-size: 14px;margin-bottom: 15px;font-weight: 500}
-    #content .option .mChange li select{width: 50px;height: 30px;font-size: 12px;border-bottom: 1px solid #000;}
+    #content .option .mChange li select{width: 60px;height: 30px;font-size: 12px;border-bottom: 1px solid #000;}
 
     #content .topping ul li{padding-top: 30px;padding-left: 20px;}
 

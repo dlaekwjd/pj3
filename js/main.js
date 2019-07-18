@@ -8,6 +8,34 @@ $(document).ready(function () {
         e.preventDefault();
         $(this).parent().show().stop().animate({bottom:'100%'});
     });
+
+    var $open_btn = $(this);
+    $first = $('#gnb [data-link=first]');
+    $last = $('#gnb [data-link="last"]');
+
+    $(this).next().show();
+    $first.focus();
+
+    $last.on('click', function () {
+      $(this).parent().hide();
+      $open_btn.focus();
+    });
+
+    $first.on('keydown', function (e) {
+      if (e.keyCode == 9 && e.shiftKey) {
+        e.preventDefault();
+        $last.focus();
+      }
+    });
+
+    $last.on('keydown', function (e) {
+      if (e.keyCode == 9 && !e.shiftKey) {
+        e.preventDefault();
+        $first.focus();
+      }
+    });
+    
+
   });	
   /* onepage scrolling */
   var $menu = $('#indicator ul li');
