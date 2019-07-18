@@ -214,8 +214,11 @@ div .size ul li p{font-size: 18px;margin-left: 10px;}
 @media screen and (max-width: 768px) {
     #header .logo{top: 40px;left: 50%;margin-left: -70px;}
     #header .logo img{width: 140px;height: 60px;}
-    #header .util{top: 40px;left: 32px}
-    #header .open_btn{top: 40px;right: 32px;}
+    #header .util{top: 55px;left: 32px}
+    #header .util li{margin-left: 5px}
+    #header .util li img{height: 22px;width: auto;}
+
+    #header .open_btn{top: 50px;right: 32px;width: 30px;height: 30px;}
 
     #indicator{display: none}
 

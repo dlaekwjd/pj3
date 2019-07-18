@@ -44,7 +44,7 @@
 .txt_box #pizzaKind, .txt_box .num_item, .txt_box #pizzaSize{height: 42px;line-height: 42px;background: #eee}
 #content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaKind{width: 172px;float: left;margin-right: 13px;padding-left: 10px}
 #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .num_item{position: relative;width: 105px;float: left;}
-.txt_box .num_item input[type="text"]{text-align: center;width: 105px;}
+.txt_box .num_item input[type="text"]{text-align: center;width: 105px;height: 100%;}
 .txt_box .num_item .num_up{position: absolute;top: 50%;right: 10px;margin-top: -6px;}
 .txt_box .num_item .num_down{position: absolute;top: 50%;left: 10px;}
 #content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaSize{width: 290px;margin-top: 10px;padding-left: 10px;margin-bottom: 18px;}
