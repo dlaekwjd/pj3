@@ -41,13 +41,15 @@
 #cnt1 #mainSlider .visual .list2{background-image: url("../images/main/visual3.jpg")}
 #cnt1 #mainSlider .visual .list3{background-image: url("../images/main/visual2.jpg")}
 
-#cnt1 #mainSlider .visual li strong{display: block;padding-top: 293px;font-size: 50px;transform: translate(0px 30px);transition: all 0.3s ease-in;}
+#cnt1 #mainSlider .visual li{display: table}
+#cnt1 #mainSlider .visual li .txtbox{display: table-cell;vertical-align: middle}
+#cnt1 #mainSlider .visual li strong{display: block;font-size: 50px;transform: translate(0px, 30px);transition: all 0.3s ease-in;}
 #cnt1 #mainSlider .visual li strong span{color: #006e62}
 #cnt1 #mainSlider .visual li p{transform: translate(0px, -10px);transition: all 0.3s ease-in}
 #cnt1 #mainSlider .visual li p{font-size: 40px;}
 #cnt1 #mainSlider .visual li .kr{padding-top: 50px;}
-#cnt1 #mainSlider .visual li .en{margin-top: 22px;}
-#cnt1 #mainSlider .paging{position: absolute;top: 654px;left: 50%;margin-left: -290px;height: 40px;z-index: 90}
+#cnt1 #mainSlider .visual li .en{margin-top: 22px;padding-bottom: 0px;}
+#cnt1 #mainSlider .paging{position: absolute;top: 70%;left: 50%;margin-left: -290px;height: 40px;z-index: 90}
 #cnt1 #mainSlider .paging li{position: relative;float: left;margin-right: 60px;width: 160px;height: 40px;text-align: center}
 #cnt1 #mainSlider .paging li:last-child{margin-right: 0;}
 #cnt1 #mainSlider .paging li:before, #cnt1 #mainSlider .paging li:after{content: "";position: absolute;bottom: 0;left: 0;height: 10px;}
@@ -105,10 +107,10 @@ div .size ul li p{font-size: 18px;margin-left: 10px;}
 #cnt3 #newTab div div .new_slider div ul li strong{display: block;font-size: 24px;color: #444;margin-top: 25px;font-weight: 600}
 #cnt3 #newTab div div .new_slider div ul li p{color: #c6c6c6;margin-top: 18px;}
 #cnt3 #newTab div div .new_slider div ul li a{display: block;background: url("../images/common/arrow.png") no-repeat 90% 13px #f43402;width: 145px;height: 39px;color: #fff;line-height: 39px;padding-left: 20px;margin: 32px 0 25px 47px}
-#cnt3 #newTab div div .new_slider #pc_prev_next a{position: absolute;top: 213px;left: 50%;}
-#cnt3 #newTab div div .new_slider #pc_prev_next .prev{margin-left: -751px;}
-#cnt3 #newTab div div .new_slider #pc_prev_next .next{margin-left: 691px;}
-#cnt3 #newTab div div .new_slider #m_prev_next{display: none;}
+#cnt3 #newTab div div .new_slider .pcbtm a{position: absolute;top: 213px;left: 50%;}
+#cnt3 #newTab div div .new_slider .pcbtm .prev{margin-left: -751px;}
+#cnt3 #newTab div div .new_slider .pcbtm .next{margin-left: 691px;}
+#cnt3 #newTab div div .new_slider .mbtm{display: none;}
 
 /* section4 */
 #cnt4 div .left, #cnt4 div .right{width: 650px;}
@@ -163,9 +165,8 @@ div .size ul li p{font-size: 18px;margin-left: 10px;}
     #gnb > ul li ul{display: none}
     
     #indicator, .scroll{display: none;}
-    #cnt1 #mainSlider .visual li strong{padding-top: 250px;font-size: 35px;}
+    #cnt1 #mainSlider .visual li strong{font-size: 35px;}
     #cnt1 #mainSlider .visual li p{font-size: 25px;}
-    #cnt1 #mainSlider .paging{top: 550px}
 
     #container #cnt2{background: #f4e0c8}
     #container #cnt2 h3, #container #cnt3 h3{font-size: 40px;padding-top: 40px;}
@@ -188,8 +189,8 @@ div .size ul li p{font-size: 18px;margin-left: 10px;}
     #cnt3 #newTab div div .new_slider div ul li strong, #cnt3 div div .new_slider div ul li p{padding-left: 20px;padding-right: 20px;} 
     #cnt3 #newTab div div .new_slider div ul li strong{font-size: 22px;margin-top: 20px}
     #cnt3 #newTab div div .new_slider div ul li p{margin-top: 10px;font-size: 14px}
-    #cnt3 #newTab div div .new_slider #pc_prev_next .prev{margin-left: -500px;}
-    #cnt3 #newTab div div .new_slider #pc_prev_next .next{margin-left: 440px;}
+    #cnt3 #newTab div div .new_slider .pcbtm .prev{margin-left: -500px;}
+    #cnt3 #newTab div div .new_slider .pcbtm .next{margin-left: 440px;}
     
     #cnt4 div .left, #cnt4 div .right{width: 50%}
     #cnt4 div .left ul{height: auto}
@@ -214,11 +215,11 @@ div .size ul li p{font-size: 18px;margin-left: 10px;}
 @media screen and (max-width: 768px) {
     #header .logo{top: 40px;left: 50%;margin-left: -70px;}
     #header .logo img{width: 140px;height: 60px;}
-    #header .util{top: 55px;left: 32px}
-    #header .util li{margin-left: 5px}
+    #header .util{top: 55px;left: 20px;width: 80px;}
+    #header .util li{margin-left: 10px}
     #header .util li img{height: 22px;width: auto;}
 
-    #header .open_btn{top: 50px;right: 32px;width: 30px;height: 30px;}
+    #header .open_btn{top: 50px;right: 20px;width: 30px;height: 30px;}
 
     #indicator{display: none}
 
@@ -231,9 +232,9 @@ div .size ul li p{font-size: 18px;margin-left: 10px;}
     #cnt1 #mainSlider .visual .list2{background-image: url("../images/mobile/visual-2@2x.png")}
     #cnt1 #mainSlider .visual .list3{background-image: url("../images/mobile/visual-3@2x.png")}
 
-    #cnt1 #mainSlider .visual li strong{padding-top: 230px;font-size: 28px}
+    #cnt1 #mainSlider .visual li strong{font-size: 28px}
     #cnt1 #mainSlider .visual li p{font-size: 22px;}
-    #cnt1 #mainSlider .paging{top: 450px;margin-left: -170px}
+    #cnt1 #mainSlider .paging{;margin-left: -170px}
     #cnt1 #mainSlider .paging li{margin-right: 20px;width: 100px;height: 60px}
     #cnt1 #mainSlider .paging li:before{width: 100px;}
     #cnt1 #mainSlider .paging li.on:after{width: 100px}
@@ -264,10 +265,10 @@ div .size ul li p{font-size: 18px;margin-left: 10px;}
 	#cnt3 #newTab div div .new_slider div ul li strong, #cnt3 div div .new_slider div ul li p{padding-left: 10px;padding-right: 10px} 
 	#cnt3 #newTab div div .new_slider div ul li strong{font-size: 20px;margin-top: 10px}
     #cnt3 #newTab div div .new_slider div ul li a{margin: 10px 0 15px 10px}
-    #cnt3 #newTab div div .new_slider #pc_prev_next{display: none}
-    #cnt3 #newTab div div .new_slider #m_prev_next{display: block}
-    #cnt3 #newTab div div .new_slider #m_prev_next a{position: absolute;top: 50%;width: 30px;}
-    #cnt3 #newTab div div .new_slider #m_prev_next .next{right: 0;}
+    #cnt3 #newTab div div .new_slider .pcbtm{display: none}
+    #cnt3 #newTab div div .new_slider .mbtm{display: block}
+    #cnt3 #newTab div div .new_slider .mbtm a{position: absolute;top: 50%;width: 30px;}
+    #cnt3 #newTab div div .new_slider .mbtm .next{right: 0;}
 
     
     #cnt4 div .left{width: 100%;float: none}

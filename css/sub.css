@@ -41,13 +41,13 @@
 #content div #pizzaTab .cntwrap > div  > ul > li .txt_box{float: left;width: 296px;margin-top: 33px;}
 #content div #pizzaTab .cntwrap > div  > ul > li .txt_box strong{display: block;font-size: 25px;text-align: center}
 #content div #pizzaTab .cntwrap > div  > ul > li .txt_box p{font-size: 14px;text-align: left;margin: 10px 0 28px }
-.txt_box #pizzaKind, .txt_box .num_item, .txt_box #pizzaSize{height: 42px;line-height: 42px;background: #eee}
-#content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaKind{width: 172px;float: left;margin-right: 13px;padding-left: 10px}
+.txt_box .pizzaKind, .txt_box .num_item, .txt_box .pizzaSize{height: 42px;line-height: 42px;background: #eee}
+#content div #pizzaTab .cntwrap > div  > ul > li .txt_box .pizzaKind{width: 172px;float: left;margin-right: 13px;padding-left: 10px}
 #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .num_item{position: relative;width: 105px;float: left;}
 .txt_box .num_item input[type="text"]{text-align: center;width: 105px;height: 100%;}
 .txt_box .num_item .num_up{position: absolute;top: 50%;right: 10px;margin-top: -6px;}
 .txt_box .num_item .num_down{position: absolute;top: 50%;left: 10px;}
-#content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaSize{width: 290px;margin-top: 10px;padding-left: 10px;margin-bottom: 18px;}
+#content div #pizzaTab .cntwrap > div  > ul > li .txt_box .pizzaSize{width: 290px;margin-top: 10px;padding-left: 10px;margin-bottom: 18px;}
 #content div #pizzaTab .cntwrap > div  > ul > li .txt_box a{display: inline-block;height: 42px;line-height: 42px;text-align: center;color: #fff;}
 #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .menu{width: 172px;background: #316910;margin-right: 9px;}
 #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .pizza_cart{width: 106px;background: #000}
@@ -83,9 +83,9 @@
     #content div #pizzaTab .cntwrap > div  > ul > li .txt_box{float: left;width: 260px;margin-top: 10px;}
     #content div #pizzaTab .cntwrap > div  > ul > li .txt_box strong{font-size: 20px;padding-top: 10px;}
     #content div #pizzaTab .cntwrap > div  > ul > li .txt_box p{font-size: 12px;text-align: left;margin: 10px 0 15px }
-    .txt_box #pizzaKind, .txt_box .num_item, .txt_box #pizzaSize{height: 25px;line-height: 25px;background: #eee}
-    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaKind{width: 140px;float: left;margin-right: 13px;padding-left: 10px}
-    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaSize{width: 258px;margin-top: 10px;padding-left: 10px;margin-bottom: 18px;}
+    .txt_box .pizzaKind, .txt_box .num_item, .txt_box .pizzaSize{height: 25px;line-height: 25px;background: #eee}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .pizzaKind{width: 140px;float: left;margin-right: 13px;padding-left: 10px}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .pizzaSize{width: 258px;margin-top: 10px;padding-left: 10px;margin-bottom: 18px;}
     #content div #pizzaTab .cntwrap > div  > ul > li .txt_box a{height: 25px;line-height: 25px;font-size: 14px}
     #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .menu{width: 140px;background: #316910;margin-right: 9px;}
 }
@@ -99,8 +99,8 @@
     #content div #pizzaTab .cntwrap > div  > ul > li .txt_box{float: left;width: 250px;margin-top: 8px;}
     #content div #pizzaTab .cntwrap > div  > ul > li .txt_box strong{font-size: 18px}
     #content div #pizzaTab .cntwrap > div  > ul > li .txt_box p{font-size: 12px;}
-    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaKind{width: 140px;float: left}
-    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaSize{width: 238px;}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .pizzaKind{width: 140px;float: left}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .pizzaSize{width: 238px;}
     #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .num_item{width: 85px;float: left}
     .txt_box .num_item input[type="text"]{text-align: center;width: 85px;}
     #content div #pizzaTab .cntwrap > div  > ul > li .txt_box a{height: 25px;line-height: 25px;font-size: 14px}
@@ -144,11 +144,11 @@
     #content div #pizzaTab .cntwrap > div  > ul > li .txt_box{width: 53%;margin-top: 0;padding-right: 2%;height: auto;}
     #content div #pizzaTab .cntwrap > div  > ul > li .txt_box strong{font-size: 16px}
     #content div #pizzaTab .cntwrap > div  > ul > li .txt_box p{font-size: 12px;margin: 5px 0;}
-    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaKind{width: 55%;float: left;font-size: 12px;margin-right: 5%}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .pizzaKind{width: 55%;float: left;font-size: 12px;margin-right: 5%}
     #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .num_item{width: 40%;float: left;text-align: center;font-size: 12px}
     .txt_box .num_item input[type="text"]{width: 40%;}
 
-    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box #pizzaSize{width: 100%;font-size: 12px;margin-bottom: 5px;margin-top: 5px;}
+    #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .pizzaSize{width: 100%;font-size: 12px;margin-bottom: 5px;margin-top: 5px;}
     #content div #pizzaTab .cntwrap > div  > ul > li .txt_box a{height: auto;line-height: 25px;font-size: 12px;margin-bottom: 10px;}
     #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .menu{width: 53%;background: #316910;margin-right: 1%;}
     #content div #pizzaTab .cntwrap > div  > ul > li .txt_box .pizza_cart{width: 43%;background: #000}
